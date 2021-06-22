@@ -1,0 +1,1 @@
+(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[561],{2403:function(s){"use strict";s.exports=JSON.parse('{"allTagsPath":"/prescrypto-docs/blog/tags","slug":"api","name":"api","count":2,"permalink":"/prescrypto-docs/blog/tags/api"}')}}]);

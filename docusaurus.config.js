@@ -3,8 +3,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Prescrypto Docs',
+  tagline: 'Everything about API, Integrations and Pharmacy docs',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -14,9 +14,9 @@ module.exports = {
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'Prescrypto Docs',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Prescrypto Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -30,6 +30,11 @@ module.exports = {
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          href: 'https://www.prescrypto.com/contact',
+          label: 'Developer Contact',
           position: 'right',
         },
       ],

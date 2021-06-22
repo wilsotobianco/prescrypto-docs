@@ -4,7 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Prescrypto Docs',
-  tagline: 'Everything about API, Integrations and Pharmacy docs',
+  tagline: 'Everything about our API, Integrations and Pharmacy docs',
   url: 'https://prescrypto.github.io',
   baseUrl: '/prescrypto-docs/',
   onBrokenLinks: 'throw',
@@ -26,9 +26,9 @@ module.exports = {
           position: 'left',
           label: 'Tutorial',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: 'https://blog.prescrypto.com/', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/Prescrypto/',
           label: 'GitHub',
           position: 'right',
         },
@@ -55,16 +55,12 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Facebook',
+              href: 'https://www.facebook.com/prescrypto/',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/pre_rx',
             },
           ],
         },
@@ -73,11 +69,11 @@ module.exports = {
           items: [
             {
               label: 'Blog',
-              to: '/blog',
+              to: 'https://blog.prescrypto.com/',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'Prescrypto Page',
+              href: 'https://www.prescrypto.com/',
             },
           ],
         },

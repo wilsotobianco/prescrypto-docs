@@ -5,13 +5,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 module.exports = {
   title: 'Prescrypto Docs',
   tagline: 'Everything about API, Integrations and Pharmacy docs',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://prescrypto.github.io',
+  baseUrl: '/prescrypto-docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'Prescrypto', // Usually your GitHub org/user name.
+  projectName: 'prescrypto-docs', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'Prescrypto Docs',

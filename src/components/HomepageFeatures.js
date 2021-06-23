@@ -8,8 +8,7 @@ const FeatureList = [
     Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Prescrypto API was designed from the ground up to be easily integrated.
       </>
     ),
   },
@@ -18,18 +17,16 @@ const FeatureList = [
     Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Prescrypto Api lets you focus on your bussiness logic, and we&apos;ll do the chores.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Powered by Open Source',
     Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Prescrypto integrations can be extended using deeplinks and more tools that will are explained here.
       </>
     ),
   },

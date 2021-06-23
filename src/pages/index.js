@@ -17,7 +17,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            Prescrypto Tutorial - 5min ⏱️
           </Link>
         </div>
       </div>
@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="This page is an overview of the Prescrypto documentation and related resources.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

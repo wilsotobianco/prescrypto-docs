@@ -17,7 +17,7 @@ module.exports = {
       title: 'Prescrypto Docs',
       logo: {
         alt: 'Prescrypto Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo_prescrypto.png',  // TODO change this for Prescrypto logo
       },
       items: [
         {
@@ -92,14 +92,14 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+          // editUrl:
+          // 'https://github.com/facebook/docusaurus/edit/master/website/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+          // editUrl:
+          //  'https://github.com/facebook/docusaurus/edit/master/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

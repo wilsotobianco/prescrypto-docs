@@ -4,32 +4,46 @@ sidebar_position: 1
 
 # Tutorial Intro
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Let's discover **prescrypto in less than 5 minutes**.
 
 ## Getting Started
 
-Get started by **creating a new site**.
+Get started by **creating a new medic**.
 
-Or **try Docusaurus immediately** with **[new.docusaurus.io](https://new.docusaurus.io)**.
+Or **try prescrypto immediately** with **[app.prescrypto.com](https://app.prescrypto.com)**.
 
-## Generate a new site
+## Generate a new Prescription
 
-Generate a new Docusaurus site using the **classic template**:
-
-```shell
-npx @docusaurus/init@latest init my-website classic
-```
-
-## Start your site
-
-Run the development server:
+Generate a new prescription using the **medic api token**:
 
 ```shell
-cd my-website
-
-npx docusaurus start
+curl --location --request POST '<BASE_URL>/api/v2/rx-endpoint/' \
+--header 'Authorization: Token <TOKEN>' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "hospital": <HOSPITAL_ID OR NULL TO TAKE THE MEDIC DEFAULT>,
+    "clinic": <CLINIC_ID OR NULL>,
+    "patient": {
+        "uid": "<PATIENT_UID>"
+    },
+    "diagnosis": "Diagnostico de prueba!",
+    "medications": [
+        {
+            "presentation": "Spiolto Respimat Solución Cartucho de 4ML 30 Dosis Caja (tiotropio 0.226 mg, clorhidrato de olodaterol 0.226 mg)",
+            "instructions": "O mejor conocidas como indicaciones en México",
+            "qty": 2,
+            "drug_upc": "<PRODUCT.id FROM_PRODUCTS_ENDPOINT or empty",
+            "category": "<PRODUCT.category>"
+        },
+        {
+            "presentation": "Prueba de Detección de SARS-CoV-2 (COVID-19)",
+            "instructions": "Indicaciones de prueba de covid",
+            "qty": 1,
+            "drug_upc": "<PRODUCT.id>",
+            "category": "<PRODUCT.category>",
+        }
+    ],
+    "extras": "Indicaciones extras para el paciente u observaciones",
+    "show_diagnosis": true
+}'
 ```
-
-Your site starts at `http://localhost:3000`.
-
-Open `docs/intro.md` and edit some lines: the site **reloads automatically** and display your changes.

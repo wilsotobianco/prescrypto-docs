@@ -24,7 +24,7 @@ module.exports = {
           type: 'doc',
           docId: 'intro',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Docs',
         },
         {to: 'https://blog.prescrypto.com/', label: 'Blog', position: 'left'},
         {

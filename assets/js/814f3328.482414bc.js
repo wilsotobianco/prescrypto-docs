@@ -1,1 +1,0 @@
-(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[535],{6353:function(e){"use strict";e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"New Post","permalink":"/prescrypto-docs/blog/new-post"},{"title":"Deeplink","permalink":"/prescrypto-docs/blog/deeplink-integration"}]}')}}]);

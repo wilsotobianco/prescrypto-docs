@@ -17,16 +17,30 @@ module.exports = {
       title: 'Prescrypto Docs',
       logo: {
         alt: 'Prescrypto Logo',
-        src: 'img/logo_prescrypto.png',  // TODO change this for Prescrypto logo
+        src: 'img/logo_prescrypto.png',
       },
       items: [
         {
           type: 'doc',
           docId: 'intro',
           position: 'left',
-          label: 'Docs',
+          label: 'API Docs',
         },
-        {to: 'https://blog.prescrypto.com/', label: 'Blog', position: 'left'},
+        {
+          to: 'docs/deeplink/overview',
+          position: 'left',
+          label: 'Deeplink',
+        },
+        {
+          to: 'docs/pharmacy/overview',
+          position: 'left',
+          label: 'Pharmacy',
+        },
+        {
+          to: 'docs/products/overview',
+          position: 'left',
+          label: 'Products',
+        },
         {
           href: 'https://github.com/Prescrypto/',
           label: 'GitHub',
@@ -94,6 +108,9 @@ module.exports = {
           // Please change this to your repo.
           // editUrl:
           // 'https://github.com/facebook/docusaurus/edit/master/website/',
+        },
+        pharmacy: {
+          sidebarPath: require.resolve('./sidebars.js'),
         },
         blog: {
           showReadingTime: true,

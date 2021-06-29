@@ -17,7 +17,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Prescrypto Tutorial - 5min ⏱️
+            Ver documentación de Prescrypto
           </Link>
         </div>
       </div>

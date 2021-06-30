@@ -14,23 +14,6 @@ Authentication : Token d3sjkT23Stks38jsnUk28012nIn
 ```
 Keys can be retrieved and configured from within your [admin](https://prescrypto.com/contact) account. Each key is configured for production mode and either private use within serverside applications, or public use with javascript. Be careful about sharing private keys as they have very powerful privileges.
 
-## Schema
-The relationship among the different Models may be confusing, to dissipate possible doubts beneath you will find a schematic visual representation of those differente hierarchy.
-
-```
-Hospital  
-├── Medic
-    └── Prescription
-    └── Patient
-
-```
-```
-A Medic can create
-├──Hospital
-└──Patient
-└──Prescription
-```
-
 ## Difference between Basic Drugs and Free Medications
 When you are creating the prescription payload you can notice that the medication field is a list of "Medication" objects, but these medications objects must be represented either a Basic Drug or Free Medication.
 
@@ -66,8 +49,11 @@ The free medications must contain the "presentation" and "instructions" fields
 
 
 ## Versioning
-Prescrypto's API it's currently in version 2 ```(api/v2/)``` nonetheless some endpoints are still existing in it's version1, please use v2 whenever possible, as those legacy endpoints are not longer supported and may not have the newest fucntionalities.
+Prescrypto's API it's currently in version 2 ```(api/v2/)``` nonetheless some endpoints are still existing in it's version1, please use v2 whenever possible, as the legacy endpoints are not longer supported and may not have the newest fucntionalities.
 
 ## Postman collection
 
 **Download our [postman collection](https://s3-us-west-2.amazonaws.com/precript-collections/Prescrypto_Integration_Endpoints_V2.postman_collection.json) to test our api**
+
+## Need info???
+We are re-Building this Documentation page, some entries are still "Work In Progress", if there's something else that you need that can't find in this Doc, please feel free to [Contact us](https://www.prescrypto.com/contact/).

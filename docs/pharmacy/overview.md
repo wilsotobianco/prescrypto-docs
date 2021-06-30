@@ -4,5 +4,6 @@ sidebar_position: 1
 
 # Pharmacy
 
+[WIP]
 
-## Create your first React Page
+[EOF]

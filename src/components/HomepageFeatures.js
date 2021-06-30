@@ -4,29 +4,29 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Facil de usar',
     Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Prescrypto API was designed from the ground up to be easily integrated.
+        La API de Prescrypto ha sido diseñada teniendo como base la simplicidad para integraciones. 
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Enfocate en lo que importa',
     Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Prescrypto Api lets you focus on your bussiness logic, and we&apos;ll do the chores.
+        La API de Prescrypto te permite enfocarte en la lógica de negocios de tu integración, la parte pesada puede correr de nuestro lado.
       </>
     ),
   },
   {
-    title: 'Powered by Open Source',
+    title: 'Expande tus posibilidades',
     Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Prescrypto integrations can be extended using deeplinks and more tools that will are explained here.
+        Las funcionalidades de integración pueden extenderse con el uso de DeepLinks para mayor interoperabilidad con otras plataformas.
       </>
     ),
   },

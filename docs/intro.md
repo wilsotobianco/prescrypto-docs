@@ -12,13 +12,15 @@ Authentication keys are used to authenticate all of your API calls via HTTP Toke
 ```json
 Authentication : Token d3sjkT23Stks38jsnUk28012nIn
 ```
-Keys can be retrieved and configured from within your [admin](https://prescrypto.com/contact) account. Each key is configured for production mode and either private use within serverside applications, or public use with javascript. Be careful about sharing private keys as they have very powerful privileges.
+
+Authentication keys will be provided through direct comunication, feel free to [contact us](https://prescrypto.com/contact).
+They are configured for production mode by default and can either be private for server-side usage or public for use in a browser. Be careful about sharing private keys as they have very powerful privileges.
 
 ## Difference between Basic Drugs and Free Medications
 When you are creating the prescription payload you can notice that the medication field is a list of "Medication" objects, but these medications objects must be represented either a Basic Drug or Free Medication.
 
 ### Basic Drugs
-A basic drug is a medication that is part of hospital or pharmacy's stock. It belongs to a Hospital entity and therefore might vary for every user. It can also be a "Study", laboratory or otherwise.
+A basic drug is a medication that is part of hospital or pharmacy's stock. It belongs to a [Hospital](api/hospital.md) entity and therefore might vary for every user. It can also be a "Study", laboratory or otherwise.
 
 You can create, modify, enable or disable basic drugs using the basic drugs endpoint
 
@@ -53,7 +55,7 @@ Prescrypto's API it's currently in version 2 ```(api/v2/)``` nonetheless some en
 
 ## Postman collection
 
-**Download our [postman collection](https://s3-us-west-2.amazonaws.com/precript-collections/Prescrypto_Integration_Endpoints_V2.postman_collection.json) to test our api**
+**Download our [postman collection](https://s3-us-west-2.amazonaws.com/precript-collections/Prescrypto_Integration_Endpoints_V2.postman_collection.json) to test our API**
 
-## Need info???
-We are re-Building this Documentation page, some entries are still "Work In Progress", if there's something else that you need that can't find in this Doc, please feel free to [Contact us](https://www.prescrypto.com/contact/).
+## Need more information???
+We are rebuilding this documentation page, so some entries are still a work in progress. If something is missing from the documentation, feel free to [Contact us](https://www.prescrypto.com/contact/).

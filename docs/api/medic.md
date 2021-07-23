@@ -77,7 +77,7 @@ You can create as many Medics as needed. A Medic requires to be a member of an "
 |email `required`| `String` 'Email address has to be unique or you'll get an error|
 |hospital |`int` , (Optional) Token user has to be the ADMIN of the Hospital id|
 |date_of_birth|format: yyyy-mm-dd  eg 1990-12-31|
-|cedula_prof|`int` number of the medical "Cédula Profesional" emited by the SEP|
+|cedula_prof|`int` number of the medical "Cédula Profesional" emited by the SEP ("Secretaría de Educación Pública")|
 |specialty_no|`int` number of the medical "Cédula Profesional" of Speciality emited by the SEP|
 |specialty|`String` name of the medical branch that the medic practice|
 |alma_mater|`String` name of the University|
@@ -88,7 +88,7 @@ You can create as many Medics as needed. A Medic requires to be a member of an "
 
 :::note
 
-Save Medic token in your side as it will be needed to do create the Deeplink to login.
+Don’t forget to save your medic token, as you’ll need it later to create a Deeplink for logging in.
 
 :::
 

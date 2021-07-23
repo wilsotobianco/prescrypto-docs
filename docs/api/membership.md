@@ -10,7 +10,7 @@ A Member of an Hospital can only prescribe from that Hospital but he is unable t
 An Admin of an Hospital can Edit its content.
 
 # List Memberships
-It will display the Medics members or a singular Hospital, you need to be ADMIN fo the Hospital to do this request.
+It will display the Medics members of a singular Hospital, you need to be ADMIN of the Hospital to send this request.
 
 ```python title="GET /api/v2/memberships/{{Hospital_ID}}/"
 import requests

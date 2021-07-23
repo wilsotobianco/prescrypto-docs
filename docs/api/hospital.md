@@ -3,10 +3,10 @@ sidebar_position: 2
 ---
 
 # Hospital
-An Hospital it's the place from where the Medic is practicing, it can be literally an Hospital, a "Consultorio" or even a clinic.
-Hospitals can be created by a Medic or API Admin, a Medic can be part to multiple Hospitals, either as Admin or Member, we call that memberhsips.
-A Medic needs an Hospital in order to create an eRx.
-The information of the Hospital is used for the header and footer of the eRx, it contains legal requirements as the address of the place from where the Medic practice, information that has to be complete, as if not, it can be a reason for pharmacies to reject the eRx.
+An Hospital it's the place from where the [Medic](medic.md) is practicing, it can be literally an Hospital, a "Consultorio" or even a clinic.
+Hospitals can be created by a [Medic](medic.md)  or API Admin, a [Medic](medic.md)  can be part to multiple Hospitals, either as Admin or Member, we call that memberhsips.
+A [Medic](medic.md)  needs an Hospital in order to create an eRx.
+The information of the Hospital is used for the header and footer of the eRx, it contains legal requirements as the address of the place from where the [Medic](medic.md)  practice, information that has to be complete, as if not, it can be a reason for pharmacies to reject the eRx.
 
 
 ## Fields of a Hospital
@@ -113,7 +113,7 @@ print(response.text)
 ```
 :::note
 
-If you create an Hospital with the Token of the Medic, it will be automatically link the Medic and the Hospital as "Admin" by default. 
+If you create an Hospital with the Token of the Medic, it will  automatically link the Medic and the Hospital as "Admin" by default. 
 Add "is_admin: false" if you want to specify a Memberhip of "member" instead of admin.
 
 :::

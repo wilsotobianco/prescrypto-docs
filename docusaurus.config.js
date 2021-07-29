@@ -4,7 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Prescrypto Docs',
-  tagline: 'Everything about our API, Integrations and Pharmacy docs',
+  tagline: 'Toda documentación sobre nuestra API, Integraciones y Farmacia',
   url: 'https://prescrypto.github.io',
   baseUrl: '/prescrypto-docs/',
   onBrokenLinks: 'throw',

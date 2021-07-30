@@ -42,6 +42,11 @@ module.exports = {
           label: 'Products',
         },
         {
+          to: 'docs/webhooks/overview',
+          position: 'left',
+          label: 'Webhooks',
+        },
+        {
           href: 'https://github.com/Prescrypto/',
           label: 'GitHub',
           position: 'right',

@@ -43,13 +43,13 @@ Medications inner Fields
 
 
 ## Search an eRx
-As first element that you will have from an eRx, it's its "Signature", with this value you can search for it in Prescrypto and get a `json` with the relevant data of the eRx.
+The first element that you will have from an eRx, it's the "Signature" or "Sello electrónico", with this value you can search for it in Prescrypto and get a `json` with the relevant data of the eRx including the SKU of the medications.
 
-```python title="GET /api/v1/prescriptions/search/?query={{eRx_signature}}"
+```python title="GET /api/v2/pharmacy/rx/{{eRx_signature}}"
 import requests
 import json
 
-url = "{{Base_URL}}/api/v1/prescriptions/search/?query=eb2bd28dfac8f64207f7ad356d30a461741fc728ad55fe84c321ccd1e32634b3"
+url = "{{Base_URL}}/api/v2/pharmacy/rx/eb2bd28dfac8f64207f7ad356d30a461741fc728ad55fe84c321ccd1e32634b3"
 
 payload = json.dumps({})
 headers = {
@@ -65,53 +65,70 @@ print(response.text)
 ### Response
 
 ```json title="[200] Success, here is the detail of the eRx"
-[
-    {
-        "id": 123,
-        "clinic": null,
-        "medic": "jason@prescrypto.com",
-        "patient": {
-            "id": 179,
-            "name": "jason",
-            "email": "jason",
-            "date_of_birth": "1997-04-01",
-            "uid": "c3d77ee1-aa49-123-123-123123123",
-            "external_patient_file": ""
+{
+    "id": 1837,
+    "hospital": {
+        "id": 162,
+        "patron": "Consultorio Demo",
+        "location": "Paseo de la reforma 369, 06500, CDMX"
+    },
+    "clinic": null,
+    "medic": "jason@prescrypto.com",
+    "patient": {
+        "uid": "3ffda616-259b-44bf-a2f5-1333b21a6af0",
+        "name": "Jorge García",
+        "email": "jason@prescrypto.com",
+        "date_of_birth": "1973-03-01",
+        "gender": "M"
+    },
+    "diagnosis": "Gripe por virus de la gripe estacional identificado",
+    "medications": [
+        {
+            "id": 2156,
+            "presentation": "Actron 10 Cápsulas Caja (ibuprofeno 400 mg)",
+            "instructions": "Tomar 1 pastilla cada  8 horas",
+            "drug": "Actron 10 Capsulas Caja (ibuprofeno 400 mg)",
+            "cost": 0.0,
+            "bought": false,
+            "qty": 4,
+            "bought_qty": 0,
+            "drug_upc": "c703973dce484643feadb053f617bfcf6ae4aa4cfa73e3a6ded4bbf109369270",
+            "order_id": 0,
+            "category": "standard_drug",
+            "ad_id": "",
+            "qty_label": "4",
+            "sku": "750131860890"
         },
-        "diagnosis": "Este es mi diagnostico, porfavor cuidate!",
-        "medications": [
-            {
-                "id": 2882,
-                "presentation": "Algun Medicamento",
-                "instructions": "Eliptic Ofteno",
-                "drug": "Algun Medicamento",
-                "cost": 0.0,
-                "bought": false,
-                "qty": 1,
-                "bought_qty": 0,
-                "qty_label": ""
-            },
-            {
-                "id": 2881,
-                "presentation": "",
-                "instructions": "Adulto",
-                "drug": "n1 (f1)",
-                "cost": 0.0,
-                "bought": false,
-                "qty": 1,
-                "bought_qty": 0,
-                "qty_label": ""
-            }
-        ],
-        "extras": "Indicaciones Extra Dude!",
-        "signature": "eb2bd28dfac8f64207f7ad356d30a461741fc728ad55fe84c321ccd1e32634b3",
-        "created_at": "2021-06-30",
-        "sent": false,
-        "rejected": false,
-        "transaction_url": "https://www.prescrypto.com/hash/78626d018604549f5fddedee2b303bcd80f39604362ed50216acd13e278027bc"
-    }
-]
+        {
+            "id": 2155,
+            "presentation": "Aspirina Protect 28 Tabletas Caja (acetilsalicilico 100 mg)",
+            "instructions": "Tomar 1 pastilla cada  8 horas",
+            "drug": "Aspirina Protect 28 Tabletas Caja (acetilsalicilico 100 mg)",
+            "cost": 0.0,
+            "bought": false,
+            "qty": 3,
+            "bought_qty": 0,
+            "drug_upc": "702de9b4e3fdd0b2af67cf1765ddcf8e48723146b07da8770a87a1c008ec5f4b",
+            "order_id": 0,
+            "category": "standard_drug",
+            "ad_id": "",
+            "qty_label": "3",
+            "sku": "7501318612655"
+        }
+    ],
+    "extras": "",
+    "signature": "33c97b082e5bd0cf5b8e316a2bb2083138e391e9c7288de0672265917e7d05ee",
+    "created_at": "2021-07-28",
+    "sent": null,
+    "send_rx": true,
+    "show_diagnosis": false,
+    "bought": false,
+    "rejected": false,
+    "cta_link": "https://www.prescrypto.com/r/Td",
+    "transaction_url": "https://www.rexchain.io/hash/67faef326ddf281ed278f6501b21804a60d671cbfa0c8e28e6d879c0836cd12e"
+}
 ```
+
 
 ## Burn Medication
 When a medication has been bought by the patient, the status can be changed through the api.
@@ -164,7 +181,7 @@ print(response.text)
 ```
 
 ## Reject
-A Medic or Pharmacy can reject an eRx if they consider that the eRx does not meet the legal requirements.
+A prescription can be rejected by a [Medic](medic.md) or Pharmacy, once a prescription has been rejected it cannot be used or modified again, be very careful with this procedure.
 
 ### Body Fields
 
@@ -208,7 +225,7 @@ print(response.text)
 
 
 ## Download PDF (in base64)
-Prescriptions can be downloaded in their PDF format, for it this endpoint has been enabled, from which the response will be in base64, get this response and decode from base64 to PDF.
+Prescriptions can be downloaded in their PDF representation with this endpoint, the response will be in base64, which will be needed to decode from base64 to PDF.
 
 ```python title="GET /api/v2/rx/pdf/{{eRx_Signature}}/"
 import requests

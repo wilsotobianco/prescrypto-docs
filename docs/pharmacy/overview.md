@@ -181,7 +181,7 @@ print(response.text)
 ```
 
 ## Reject
-A prescription can be rejected by a [Medic](medic.md) or Pharmacy, once a prescription has been rejected it cannot be used or modified again, be very careful with this procedure.
+A prescription can be rejected by a Medic or Pharmacy, once a prescription has been rejected it cannot be used or modified again, be very careful with this procedure.
 
 ### Body Fields
 

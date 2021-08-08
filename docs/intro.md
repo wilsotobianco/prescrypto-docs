@@ -20,32 +20,35 @@ They are configured for production mode by default and can either be private for
 When you are creating the prescription payload you can notice that the medication field is a list of "Medication" objects, but these medications objects must be represented either a Basic Drug or Free Medication.
 
 ### Basic Drugs
-A basic drug is a medication that is part of hospital or pharmacy's stock. It belongs to a [Hospital](api/hospital.md) entity and therefore might vary for every user. It can also be a "Study", laboratory or otherwise.
+A basic drug is a medication that is part of hospital or pharmacy's stock. Basically every medication with a "drug_upc". It can also be a "auxiliary_test" or "basic_drug", you can check more details in "category" field.
 
-You can create, modify, enable or disable basic drugs using the basic drugs endpoint
 
 ```jsx
-// Example for a medication with BASIC DRUG
+// Example for a basic drug medication
 {
-  "presentation": "", // Notice that "presentation" is empty on basic drugs because the "drug" reference will fill it instead
-  "instructions": "Tomesé cada 8 horas, instrucciones para Med de cuadro básico",
-  "drug": 11 // Notice that "drug" field must be filled with basic drug id
+  "presentation": "Algún Medicamento Libre",
+  "instructions": "Instrucciones para un medicamento libre",
+  "category": "basic_drug"
 }
-``` 
+```
+
+Note: When the medication has de "drug_upc" means that the medication was selected by the medic using our product catalog.
 
 ### Free Medications
-By definition, free medications are whatever isn't a Basic Drug, they are usually auto-completed with text from our product catalog.
+They are usually text manually by the doctor, without using our product catalog.
 
-Anything can be written on the "presentation" field
+Anything can be written on the "presentation" field.
 
-The free medications must contain the "presentation" and "instructions" fields
+The free medications must contain the "presentation" and "instructions" fields.
+
+Additionally, it is recommended adding the category "unstructured_drug"
 
 ```jsx
-// Example for a medication with FREE MEDICATION
+// Example for a free medication
 {
   "presentation": "Algún Medicamento Libre", // Observe that "presentatio" field must be filled
   "instructions": "Instrucciones para un medicamento libre",
-  "drug": null // Observe that "drug" field must be filled with "null"
+  "category": "unstructured_drug"
 }
 ```
 

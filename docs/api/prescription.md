@@ -55,12 +55,10 @@ payload = json.dumps({
     {
       "presentation": "Ibuprofeno ",
       "instructions": "Tomar 1 pastilla cada 8 horas durante 7 dias",
-      "drug": null
     },
     {
       "presentation": "Aspirina Protect",
       "instructions": "Tomar 1 pastilla cada 8 horas durante 7 dias",
-      "drug": null
     }
   ],
   "extras": "Fiebre 38ºC, Cefaleas, escalofrios",
@@ -103,7 +101,6 @@ print(response.text)
             "id": 22,
             "presentation": "Ibuprofeno",
             "instructions": "Tomar 1 pastilla cada 8 horas durante 7 dias",
-            "drug": "",
             "cost": 0.0,
             "bought": false,
             "qty": 1,
@@ -118,7 +115,6 @@ print(response.text)
             "id": 23,
             "presentation": "Aspirina Protect",
             "instructions": "Tomar 1 pastilla cada 8 horas durante 7 dias",
-            "drug": "",
             "cost": 0.0,
             "bought": false,
             "qty": 1,

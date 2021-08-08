@@ -24,7 +24,7 @@ module.exports = {
           type: 'doc',
           docId: 'intro',
           position: 'left',
-          label: 'API Docs',
+          label: 'Prescrypto API',
         },
         {
           to: 'docs/deeplink/overview',
@@ -40,11 +40,6 @@ module.exports = {
           to: 'docs/products/overview',
           position: 'left',
           label: 'Products',
-        },
-        {
-          to: 'docs/webhooks/overview',
-          position: 'left',
-          label: 'Webhooks',
         },
         {
           href: 'https://github.com/Prescrypto/',

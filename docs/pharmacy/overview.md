@@ -32,7 +32,6 @@ Medications inner Fields
 |id|`Int` the id of the medication, get this id from the Search endpoint|
 |presentation| `String` The commercial name of the Medication, eg: "Aspirina"|
 |instructions| `String` "Posología" for that specific medication|
-|drug| `String` [WIP]|
 |cost| `Int` [WIP]|
 |bought| `Boolean` Indicates if this medication can still be sold, if `true` it means all prescribed quantities have been sold.|
 |qty|`Int` Number of this medication that has been prescribed|
@@ -87,7 +86,6 @@ print(response.text)
             "id": 2156,
             "presentation": "Actron 10 Cápsulas Caja (ibuprofeno 400 mg)",
             "instructions": "Tomar 1 pastilla cada  8 horas",
-            "drug": "Actron 10 Capsulas Caja (ibuprofeno 400 mg)",
             "cost": 0.0,
             "bought": false,
             "qty": 4,
@@ -103,7 +101,6 @@ print(response.text)
             "id": 2155,
             "presentation": "Aspirina Protect 28 Tabletas Caja (acetilsalicilico 100 mg)",
             "instructions": "Tomar 1 pastilla cada  8 horas",
-            "drug": "Aspirina Protect 28 Tabletas Caja (acetilsalicilico 100 mg)",
             "cost": 0.0,
             "bought": false,
             "qty": 3,

@@ -24,7 +24,7 @@ module.exports = {
           type: 'doc',
           docId: 'intro',
           position: 'left',
-          label: 'API Docs',
+          label: 'Prescrypto API',
         },
         {
           to: 'docs/deeplink/overview',

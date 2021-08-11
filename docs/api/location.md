@@ -62,7 +62,8 @@ print(response.text)
 ]
 ```
 
-## Update Location
+## Update Locations
+
 It will change the default "Active" Hospital for which the Medic will prescribe.
 
 ```python title="PATCH /api/v2/locations/update/"

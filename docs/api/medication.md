@@ -34,7 +34,6 @@ print(response.text)
             "id": 2872,
             "presentation": "aspirina",
             "instructions": "tomar 1 pastilla cada 8 horas durante 7 dias",
-            "drug": "aspirina",
             "cost": 0.0,
             "bought": false,
             "qty": 3,

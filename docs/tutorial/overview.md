@@ -134,14 +134,26 @@ We verify the metadata of every medic on our plataform, if the medic has not spe
 
 :::
 
-
-## Prescription and Medication models
-
-
-### Understanding a Prescrition Flow
+> We highly recommend you to save the ID's of the doctors you have create. In order to have a better integration.
 
 
-## Undestanding Management Memberships
+## Creating you first Prescription
+
+
+### Creating a Patient
+
+### Adding Medications
+
+### Create prescription
+
+### Listening webhooks
+
+
+## Management Memberships
 
 ### Membership model diagram
-### Add new members, remove and reactivate members
+### See list of memberships from one hospital
+### See list of memberships that admin user can manage
+### Modify memberships
+### Delete or remove memberships
+

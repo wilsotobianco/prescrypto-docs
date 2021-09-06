@@ -99,7 +99,7 @@ curl --request POST \
 }'
 ```
 
-:::tip TIP: What about "is_admin_membership"
+:::note Note: What about "is_admin_membership"
 
 If the field is settled TRUE, the medic user can edit the hospital or invite new members to it, otherwise, the medic will be only a member, who can create prescriptions from that location or remove their own membership. In the Membership Section there is more explanation.
 
@@ -110,11 +110,11 @@ Response
 ```
 {
   "id": 3253,
-  "token": "ee8c126a9b21ea73b4444d55b3e933f6a9644fef2",
+  "token": "ee8c126TEST",
   "name": "Test Doctor Who",
   "password": "pbkdf2_sha256$150000$seSHVhCcpeF0$Lt7E9e9hpXYg5iG4Z7nGa5YWTb6LIjRzP8FIkiskWT0=",
   "email": "testemailing@email.com",
-  "hospital": 6,
+  "hospital": 9,
   "date_of_birth": "1991-09-03",
   "cedula_prof": "ABC1234",
   "specialty_no": "ABC1234",
@@ -128,16 +128,26 @@ Response
 }
 ```
 				
-:::tip TIP: Notice the field "specialty_verified"
+:::info INFO: Save the medic id on your own database
 
-We verify the metadata of every medic on our plataform, if the medic has not specialty verified, shamely that medic couldn't create any prescription. So please let us know if your integrations has not specialty verified users.
+We highly recommend you to save the ID's of the doctors you have create. In order to have a better integration.
 
 :::
 
-> We highly recommend you to save the ID's of the doctors you have create. In order to have a better integration.
+> We verify the metadata of every medic on our plataform, if the medic has not specialty verified, shamely that medic couldn't create any prescription. So please let us know if your integrations has not specialty verified users.
 
 
-## Creating you first Prescription
+## Creating Prescriptions
+
+So the next step is create the first prescription
+
+Regarding the before steps, we have the following data:
+
+| LABEL | value |
+| - | - |
+| HOSPITAL_ID | 9 |
+| MEDIC_ID | 3253 | 
+| MEDIC_TOKEN_ID | ee8c126TEST |
 
 
 ### Creating a Patient

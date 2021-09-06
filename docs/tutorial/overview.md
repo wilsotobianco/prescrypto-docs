@@ -161,7 +161,10 @@ Regarding the before steps, we have the following data:
 
 ## Management Memberships
 
-### Membership model diagram
+Below we can see the main use cases to start using the membership endpoints. 
+
+![Base Models Diagram](/tutorial/membership_diagram.png)
+
 ### See list of memberships from one hospital
 ### See list of memberships that admin user can manage
 ### Modify memberships

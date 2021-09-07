@@ -130,16 +130,16 @@ Response
 				
 :::info INFO: Save the medic id on your own database
 
-We highly recommend you to save the ID's of the doctors you have create. In order to have a better integration.
+In order to have a better integration, we highly recommend you to save the ID's of the doctors you have created
 
 :::
 
-> We verify the metadata of every medic on our plataform, if the medic has not specialty verified, shamely that medic couldn't create any prescription. So please let us know if your integrations has not specialty verified users.
+> We verify the metadata of every medic on our plataform, if the medic has not specialty verified, shamely that medic couldn't create any prescription. Please let us know if your integrations have or haven't got specialty verified users
 
 
 ## Creating Prescriptions
 
-So the next step is create the first prescription
+The next step is to create the first prescription
 
 Regarding the before steps, we have the following data:
 

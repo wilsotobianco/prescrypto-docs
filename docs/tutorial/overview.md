@@ -152,10 +152,10 @@ Regarding the before steps, we have the following data:
 
 ### Creating a Patient
 
-> Important: Look up that the following instructions you will use the medic token instead of the admin user token
+> Attention. From now on the `medic's token` will be used instead of the `admin's`
 
-You can see the [patient endpoint](api/patient.md) aswell, in order to have more details about patient model.
-Before create a prescription, the patient ID is required, you have to create or search for the patient, as follows:
+You can see the [patient endpoint](api/patient.md) as well, in order to have more details about patient model.
+Before creating a prescription, the patient ID is required, you have to create or search for the patient, as follows:
 
 
 Search patient

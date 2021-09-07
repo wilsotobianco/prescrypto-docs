@@ -339,8 +339,23 @@ The webhooks are important in cases where you have external services who need to
 You must define a POST Endpoint where we can send the information. And give us the list of the medics by email or the hospitals that you manage, so whenever a medic listed before made a prescription we send a post request to your webhook endpoint. 
 
 Lets see an example:
+We send to a Prescrypto admin the follow information:
 
+HOSPITAL_ID_LIST = [<HOSPITAL_ID_01>, <HOSPITAL_ID_2>]
+MEDIC_ID_LIST = [<MEDIC_ID>, <MEDIC_EMAIL>]
+WEBHOOOK_URL = "<MY_SITE_DOMAIN><WEBHOOK_PATH_URL>"
 
+We validate that the hospitals and medics exists, besides the webhook has allowed POST requests.
+
+Then whenever a prescription is made from that list of users, we sent to your webhook the follow information
+
+```
+{
+	signature: "<SIGNATURE_ID>"
+}
+
+```
+> So you can hit the prescription [detail view](api/prescription.md) or do whatever your bussiness logic need
 
 ## Management Memberships
 

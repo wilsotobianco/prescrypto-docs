@@ -185,7 +185,7 @@ Response
         "state": "",
         "zip_code": "",
         "location": "CDMX, Ciudad de México",
-        "uid": "da59b2a8-5473-4b6c-b67e-06b07b6602e7"
+        "uid": "da59b2a8-5473-4b6c-b67e-06b07b6602e7". // <PATIENT_ID>
     }
 ]
 
@@ -227,10 +227,119 @@ Notice that the field `drug_upc` and `category` are special. See the following t
 
 > See the [products endpoint](products/overview.md) to see more details about how to find medications from our catalog
 
-
 ### Create prescription
 
+Now the process of create a prescription is as follow:
+
+First we have to create the payload adding the before values:
+
+
+```
+curl --location --request POST '<BASE>/api/v2/rx-endpoint/' \
+--header 'Authorization: Token <MEDIC_TOKEN>' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "hospital": 9,  // <HOSPITAL_ID>
+    "clinic": null,
+    "patient": {
+        "uid": "cba292ec-2a76-47d7-b746-902c9d41a9f4" // <PATIENT_UID> 
+    },
+    "diagnosis": "Diagnostico de prueba!",
+    "medications": [
+        {
+            "presentation": "Spiolto Respimat Solución Cartucho de 4ML 30 Dosis Caja (tiotropio 0.226 mg, clorhidrato de olodaterol 0.226 mg)",
+            "instructions": "Spiolto Med",
+            "qty": 1,
+            "drug_upc": "0b7949396af3a5c03d68f22b267b0d85f5175b23f8533ad1ff261c0d5bd5191e",
+            "category": "standard_drug"
+        },
+        {
+            "presentation": "Prueba de Detección de SARS-CoV-2 (COVID-19)",
+            "instructions": "Porfavor haga esta prueba",
+            "qty": 3,
+            "drug_upc": "83cd6128a7f3f50dab182b20cee7aa966a2255e77ba2d16b200f2c2d191430e4",
+            "category": "standard_drug",
+        }
+    ],
+    "extras": "Indicaciones extras para el paciente u observaciones",
+    "show_diagnosis": true,
+    "send_rx": true, // if set false, the rx won't sent
+}'
+
+```
+
+The response is as follow:
+
+```
+{
+  "id": 2136,
+  "hospital": 9,
+  "clinic": null,
+  "medic": "<MEDIC_EMAIL>",
+  "patient": {
+    "uid": "<PATIENT_UID>",
+    "name": "<PATIENT_NAME>",
+    "email": "<PATIENT_EMAIL>"
+  },
+  "diagnosis": "Prueba para medicamentos , pharmacy",
+  "medications": [
+    {
+      "id": 439,
+      "presentation": "Prueba de Detección de SARS-CoV-2 (COVID-19)",
+      "instructions": "Porfavor haga esta prueba",
+      "drug": "Prueba de Deteccion de SARS-CoV-2 (COVID-19)",
+      "cost": 0.0,
+      "bought": false,
+      "qty": 1,
+      "bought_qty": 0,
+      "drug_upc": "<DRUG_UPC>",
+      "order_id": 0,
+      "category": "standard_drug",
+      "qty_label": "Sin suspender"
+    },
+    {
+      "id": 438,
+      "presentation": "Spiolto Respimat Solución Cartucho de 4ML 30 Dosis Caja (tiotropio 0.226 mg, clorhidrato de olodaterol 0.226 mg)",
+      "instructions": "Spiolto Med",
+      "drug": "Spiolto Respimat Solucion Cartucho de 4ML 30 Dosis Caja (tiotropio 0.226 mg, clorhidrato de olodaterol 0.226 mg)",
+      "cost": 0.0,
+      "bought": false,
+      "qty": 3,
+      "bought_qty": 0,
+      "drug_upc": "0b7949396af3a5c03d68f22b267b0d85f5175b23f8533ad1ff261c0d5bd5191e",
+      "order_id": 0,
+      "category": "standard_drug",
+      "qty_label": "A la discreción del farmacéutico(a)"
+    }
+  ],
+  "extras": "Indicaciones extras para el paciente u observaciones",
+  "signature": "c3096f28b4df5f19f04bcf39ba8cc0b81ce38068dd03a98c7eb37a8be38fdfd7", // <RX_ID>
+  "created_at": "2021-08-14",
+  "sent": null, // The API sent the email in async way, that means that the status will be update after some minutes
+  "send_rx": true,
+  "additional_data": {},
+  "show_diagnosis": true,
+  "rejected": false,
+  "bought": false,
+  "cta_link": "<BASE_URL>/r/4q" // Link that redirect the user to our patient landing, where can found an external service to get the medications
+}
+
+```
+
+:::info
+
+The important field is the `signature` field and the status of the rx about bought medications. So you can see details of the prescription everytime using the [prescription detail endpoint](api/prescription.md)
+
+:::
+
 ### Listening webhooks
+
+The webhooks are important in cases where you have external services who need to know when a prescription is made by one of your medics.
+
+You must define a POST Endpoint where we can send the information. And give us the list of the medics by email or the hospitals that you manage, so whenever a medic listed before made a prescription we send a post request to your webhook endpoint. 
+
+Lets see an example:
+
 
 
 ## Management Memberships

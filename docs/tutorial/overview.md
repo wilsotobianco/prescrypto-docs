@@ -341,9 +341,12 @@ You must define a POST Endpoint where we can send the information. And give us t
 Lets see an example:
 We send to a Prescrypto admin the follow information:
 
+```
 HOSPITAL_ID_LIST = [<HOSPITAL_ID_01>, <HOSPITAL_ID_2>]
 MEDIC_ID_LIST = [<MEDIC_ID>, <MEDIC_EMAIL>]
 WEBHOOOK_URL = "<MY_SITE_DOMAIN><WEBHOOK_PATH_URL>"
+
+```
 
 We validate that the hospitals and medics exists, besides the webhook has allowed POST requests.
 
@@ -363,8 +366,149 @@ Below we can see the main use cases to start using the membership endpoints.
 
 ![Base Models Diagram](/tutorial/membership_diagram.png)
 
-### See list of memberships from one hospital
+Lets see the Prescrypto API endpoints about to manage the memberships.
+
 ### See list of memberships that admin user can manage
+
+As you can see in the above diagram, the membership is the model object that act as union between medic and hospital, you can register new medics to a hospital creating a membership, revoke permisions making a `"DELETE"` request or modify between `"MEMBER"` or `"ADMIN"` type of membership.
+
+```bash
+curl --request GET \
+  --url <BASE>/api/v2/management/memberships/ \
+  --header 'Authorization: Token <ADMIN_TOKEN>' \
+  --header 'Content-Type: application/json' \
+
+```
+Response
+```
+{
+  "count": 2, // Number of memberships found
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 1,
+      "medic": {
+        "id": 1,
+        "email": "test.1@email.com",
+        "name": "Medic TEST 01"
+      },
+      "hospital": <HOSPITAL_ID_01>,
+      "type_membership": "ADMIN",
+      "is_active": true,
+      "is_deleted": false,
+      "date_joined": "2019-06-21T17:00:09.472000Z"
+    },
+    {
+      "id": <MEMBERSHIP_ID>,
+      "medic": {
+        "id": <MEDIC_ID>,
+        "email": "<MEDIC_EMAIL>",
+        "name": "<MEDIC_NAME>"
+      },
+      "hospital": <HOSPITAL_ID_02>,
+      "type_membership": "<MEMBER_OR_ADMIN>",
+      "is_active": true,   // Means the hospital is the currect active hospital with the user
+      "is_deleted": false, // whether the user can use the location or not
+      "date_joined": "2019-06-21T17:00:21.424000Z"
+    }
+}
+```
+
+:::info
+
+TIP: Don't forget the  `MEMBERSHIP_ID` , `MEDIC_ID`, `HOSPITAL_ID` these are the most important fields in this section
+
+:::
+
+### See list of memberships from one hospital
+
+Other use of case is when a medic admin only wants to see the memberships by hospital. Lets see one example.
+
+```bash
+curl --request GET \
+  --url <BASE>/api/v2/memberships/<HOSPITAL_ID>/ \
+  --header 'Authorization: Token <TOKEN>' \
+  --header 'Content-Type: application/json' \
+
+```
+
+Response 
+```
+ [
+ 	{
+      "id": <MEMBERSHIP_ID>,
+      "medic": {
+        "id": <MEDIC_ID>,
+        "email": "<MEDIC_EMAIL>",
+        "name": "<MEDIC_NAME>"
+      },
+      "hospital": <HOSPITAL_ID>,
+      "type_membership": "<MEMBER_OR_ADMIN>",
+      "is_active": true,   // Means the hospital is the currect active hospital with the user
+      "is_deleted": false, // whether the user can use the location or not
+      "date_joined": "2019-06-21T17:00:21.424000Z"
+    }
+]
+```
+
+For example you can see this list when enter to edit an hospital, a hit to the hospital and other for the list of memberships inside are requested.
+
 ### Modify memberships
+
+The important fields to change are, `type_of_membership`, `medic` or `hospital`.
+So you have to store these values before proceed to change the membership, also the <MEMBERSHIP_ID>
+
+> Only your management memberships are allowed to modify , lets see an example:
+
+Request
+
+```
+curl --request PATCH \
+  --url <BASE>/api/v2/management/memberships/<MEMBERSHIP_ID>/ \
+  --header 'Authorization: Token <ADMIN_TOKEN>' \
+  --header 'Content-Type: application/json' \
+  --data '{
+      "type_membership": "MEMBER"
+}'
+
+```
+
+Response 200 OK
+
+```
+{
+  "id": <MEMBERSHIP_ID>,
+  "medic": {
+    "id": <MEDIC_ID>,
+    "name": "<MEDIC_NAME",
+    "email": "<MEDIC_EMAIL>"
+  },
+  "hospital": <HOSPITAL_ID>,
+  "type_membership": "MEMBER",
+  "is_active": false,
+  "is_deleted": false,
+  "date_joined": "2021-07-21T21:43:41.315975Z"
+}
+
+```
+
 ### Delete or remove memberships
 
+There is a way to elimitate a membership, using this endpoint but this will be as a soft delete. That means that the `"is_deleted"` field will be set to `true`. Lets see the example
+
+Request 
+```
+curl --request DELETE \
+  --url <BASE>/api/v2/management/memberships/<MEMBERSHIP_ID>/ \
+  --header 'Authorization: Token <ADMIN_TOKEN>' \
+  --header 'Content-Type: application/json'
+```
+
+Response HTTP_204_NO_CONTENT
+
+```
+
+```
+
+> Notice that the response is empty, but the status code is _204_

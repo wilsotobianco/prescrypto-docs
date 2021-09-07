@@ -147,12 +147,86 @@ Regarding the before steps, we have the following data:
 | - | - |
 | HOSPITAL_ID | 9 |
 | MEDIC_ID | 3253 | 
-| MEDIC_TOKEN_ID | ee8c126TEST |
+| MEDIC_TOKEN | ee8c126TEST |
 
 
 ### Creating a Patient
 
+> Important: Look up that the following instructions you will use the medic token instead of the admin user token
+
+You can see the [patient endpoint](api/patient.md) aswell, in order to have more details about patient model.
+Before create a prescription, the patient ID is required, you have to create or search for the patient, as follows:
+
+
+Search patient
+```
+// "search_word" could be email or name
+
+curl --location 
+  --request GET '<BASE>/api/v2/patient/?search=<SEARCH_WORD>' \
+  --header 'Authorization: Token <MEDIC_TOKEN>'
+
+```
+
+Response
+
+```
+[
+    {
+        "id": 180,
+        "name": "Jesus Alvarado",
+        "email": "testPatient@email.com",
+        "date_of_birth": "1990-01-18",
+        "external_patient_file": "",
+        "gender": "M",
+        "curp": "ABCTEST",
+        "phone": "555123456",
+        "address": "",
+        "state": "",
+        "zip_code": "",
+        "location": "CDMX, Ciudad de México",
+        "uid": "da59b2a8-5473-4b6c-b67e-06b07b6602e7"
+    }
+]
+
+```
+:::info
+
+So the important field is `uid`. Save it.
+
+:::
+
+
+
 ### Adding Medications
+
+The medication object has a lot of useful fields, but in this tutorial only we take care of the needed in order to create a prescription. For more details see the [medication api](api/medication.md) section
+
+Example of a simple medication
+
+```
+{
+    "presentation": "Spiolto Respimat Solución Cartucho de 4ML 30 Dosis Caja (tiotropio 0.226 mg, clorhidrato de olodaterol 0.226 mg)",
+    "instructions": "Una vez cada 8 horas",
+    "qty": 3,
+    "drug_upc": "0b7949396af3a5c03d68f22b267b0d85f5175b23f8533ad1ff261c0d5bd5191e",
+    "category": "standard_drug"
+}
+```
+
+:::info
+
+Notice that the field `drug_upc` and `category` are special. See the following table to know how to fullfil those fields. 
+
+:::
+| Whether you have  this field | MUST | Optional |
+| - | - | - |
+| `drug_upc`: "from your catalog" | category: `"basic_drug"` | - |
+| `drug_upc`: "from our catalog"| category: `"from our catalog category"` We send you the correct category for the product| category: `"basic_drug"` Could be `basic_drug` if it belong to your catalog too |
+|`drug_upc`: `""` | - | - |
+
+> See the [products endpoint](products/overview.md) to see more details about how to find medications from our catalog
+
 
 ### Create prescription
 

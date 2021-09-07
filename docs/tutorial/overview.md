@@ -16,9 +16,9 @@ Below we can see the main models to start using the API. Hospitals, and Medics.
 ![Base Models Diagram](/tutorial/base_models.png)
 
 
-### Creating an Hospital
+### Creating a Hospital
 
-First we recommend create a place to work. So the endpoint [hospital](api/hospital.md) will be the first to hint!
+First, we recommend you create a place to work. So the endpoint [hospital](api/hospital.md) will be the first to hint!
 
 Example Request
 
@@ -58,8 +58,8 @@ Response
   "info": false
 }
 ```
-				
-The pictures could be upload using the webform on the plataform or via postman forms alike. On our postman collection we have an example.
+
+The pictures could be uploaded by using the web form on the plataform or by postman forms alike.  There's an example in our postman collection
 
 :::tip TIP: Pay attention to required and non required fields
 
@@ -70,7 +70,7 @@ Also what the default configurations means, these fields affect the medic workfl
 
 ### Creating Medics
 
-So having the HOSPITAL_ID (9) we can proceed to create new medic users. Lets create two medics, one with the hospital recently created and other without hospital.
+Once the `HOSPITAL` has been created, we can proceed to create new medic users. Let's create two medics, one with the hospital recently created and the other without hospital
 
 So we will use the endpoint [medics](api/medic.md)
 
@@ -101,7 +101,7 @@ curl --request POST \
 
 :::note Note: What about "is_admin_membership"
 
-If the field is settled TRUE, the medic user can edit the hospital or invite new members to it, otherwise, the medic will be only a member, who can create prescriptions from that location or remove their own membership. In the Membership Section there is more explanation.
+If the field is settled TRUE, the medic user can edit the hospital or invite new members to it, otherwise, the medic will be only a member, who can create prescriptions from that location or remove their own membership. There is more information in the membership section
 
 :::
 
@@ -338,7 +338,7 @@ The webhooks are important in cases where you have external services who need to
 
 You must define a POST Endpoint where we can send the information. And give us the list of the medics by email or the hospitals that you manage, so whenever a medic listed before made a prescription we send a post request to your webhook endpoint. 
 
-Lets see an example:
+Let's see an example:
 We send to a Prescrypto admin the follow information:
 
 ```
@@ -366,7 +366,7 @@ Below we can see the main use cases to start using the membership endpoints.
 
 ![Base Models Diagram](/tutorial/membership_diagram.png)
 
-Lets see the Prescrypto API endpoints about to manage the memberships.
+Let's see the Prescrypto API endpoints about to manage the memberships.
 
 ### See list of memberships that admin user can manage
 
@@ -423,7 +423,7 @@ TIP: Don't forget the  `MEMBERSHIP_ID` , `MEDIC_ID`, `HOSPITAL_ID` these are the
 
 ### See list of memberships from one hospital
 
-Other use of case is when a medic admin only wants to see the memberships by hospital. Lets see one example.
+Other use of case is when a medic admin only wants to see the memberships by hospital. Let's see one example.
 
 ```bash
 curl --request GET \
@@ -452,14 +452,14 @@ Response
 ]
 ```
 
-For example you can see this list when enter to edit an hospital, a hit to the hospital and other for the list of memberships inside are requested.
+For example you can see this list when enter to edit a hospital, a hit to the hospital and other for the list of memberships inside are requested.
 
 ### Modify memberships
 
 The important fields to change are, `type_of_membership`, `medic` or `hospital`.
 So you have to store these values before proceed to change the membership, also the <MEMBERSHIP_ID>
 
-> Only your management memberships are allowed to modify , lets see an example:
+> Only your management memberships are allowed to modify , Let's see an example:
 
 Request
 
@@ -495,7 +495,7 @@ Response 200 OK
 
 ### Delete or remove memberships
 
-There is a way to elimitate a membership, using this endpoint but this will be as a soft delete. That means that the `"is_deleted"` field will be set to `true`. Lets see the example
+There is a way to elimitate a membership, using this endpoint but this will be as a soft delete. That means that the `"is_deleted"` field will be set to `true`. Let's see the example
 
 Request 
 ```

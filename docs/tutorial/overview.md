@@ -454,6 +454,28 @@ Response
 
 For example you can see this list when enter to edit a hospital, a hit to the hospital and other for the list of memberships inside are requested.
 
+
+### Search a medic to use the medic id 
+
+For almost all interaction with memberships, looking for a medic id could be tedious. For that reason, the endpoint search medic could be useful, let's see the examples:
+
+
+
+### Create a membership
+
+As part of the flow, creating memberships will require at least the medic id, hospital id, and what type of membership.
+The `is_active` field will require a specific endpoint to update it. Please see the next section "Set as default hospital"
+
+
+
+
+### Set as default hospital 
+
+Creating more than one memberships for a medic means that the medic has to select what location is the current or active hospital, using the following endpoint is the best aproach, othwerwise, you must change all the medic memberships `is_active=false` and the active membership change it to `is_active=true`. This endpoint made that, let's see the example:
+
+
+
+
 ### Modify memberships
 
 The important fields to change are, `type_of_membership`, `medic` or `hospital`.

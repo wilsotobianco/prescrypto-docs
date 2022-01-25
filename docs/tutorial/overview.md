@@ -454,6 +454,115 @@ Response
 
 For example you can see this list when enter to edit a hospital, a hit to the hospital and other for the list of memberships inside are requested.
 
+
+### Search a medic to use the medic id 
+
+For almost all interaction with memberships, looking for a medic id could be tedious. For that reason, the endpoint search medic could be useful, let's see the example:
+
+Request
+
+```
+curl --request GET \
+  --url '<BASE>/api/v2/search/medics/?query=<EMAIL>' \
+  --header 'Authorization: Token  <TOKEN>' \
+  --header 'Content-Type: application/json' \
+
+```
+
+Response
+
+```
+{
+  "count": 1,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 25,
+      "email": "<EMAIL>"
+    }
+  ]
+}
+
+```
+
+Note that the response could be 200 okay but not founded any match, the response will be as follow:
+
+```
+{
+  "count": 0,
+  "next": null,
+  "previous": null,
+  "results": []
+}
+```
+
+### Create a membership
+
+As part of the flow, creating memberships will require at least the medic id, hospital id, and what type of membership.
+The `is_active` field will require a specific endpoint to update it. Please see the next section "Set as default hospital"
+
+Create membership request example:
+
+```
+{
+  "hospital": <HOSPITAL_ID>,
+  "type_membership": "<ADMIN or MEMBER>",
+  "medic": <MEDIC_ID>
+}
+
+```
+
+Response
+
+```
+# status 201 created
+
+{
+  "medic": <MEDIC_ID>,
+  "type_membership": "<ADMIN or MEMBER>"
+}
+
+```
+
+Although chances are that the medic has already a membership on the hospital selected.
+We catch that flow and still return the 201 created, but reactivating the membership with the field `is_deleted=false`
+
+> Only your management hospitals are allowed to create new memberships 
+
+### Set as default hospital 
+
+Creating more than one memberships for a medic means that the medic has to select what location is the current or active hospital, using the following endpoint is the best aproach, othwerwise, you must change all the medic memberships `is_active=false` and the active membership change it to `is_active=true`. This endpoint made that, let's see the example:
+
+
+```
+curl --request PATCH \
+  --url <BASE>/api/v2/locations/update/ \
+  --header 'Authorization: Token <MEDIC_TOKEN> ' \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "hospital_id": <HOSPITAL_ID>
+}'
+```
+
+Response 
+
+```
+# status code 200
+{
+  "message": "HOSPITAL UPDATE SUCCESSFULLY"
+}
+```
+
+If the medic has not membership on that hospital a 404 status code will be the response
+
+```
+# status code 404
+{
+  "message": "HOSPITAL UPDATE SUCCESSFULLY"
+}
+```
+
 ### Modify memberships
 
 The important fields to change are, `type_of_membership`, `medic` or `hospital`.

@@ -8,14 +8,10 @@ This sections aims to provide updates about changes to the Prescrypto API, where
 
 ## Log
 
-- (24 Jan, 2022) Add it to docs the param `page` for navigate in products endpoint
+- (24 Jan, 2022) Add the param `page` to products docs, it explains how to navigate in products results
 
 
 
 ## Notifications
 
 - The v1 endpoints are deprecated, so we encourage to all our users to update to v2
-- The clinic field of the prescription payload will be deprecated soon, for now fill it up with `null`.
-
-
-

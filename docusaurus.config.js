@@ -63,6 +63,10 @@ module.exports = {
               label: 'Tutorial',
               to: '/docs/tutorial/overview',
             },
+            {
+              label: 'Changelog',
+              to: '/docs/changelog/overview',
+            },
           ],
         },
         {

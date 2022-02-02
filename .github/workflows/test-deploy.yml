@@ -21,7 +21,7 @@ jobs:
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
       - name: Test build
-        working-directory: website
+        # working-directory: website
         run: |
           yarn install --frozen-lockfile
           yarn build

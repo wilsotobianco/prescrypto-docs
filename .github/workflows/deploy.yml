@@ -15,10 +15,21 @@ jobs:
         with:
           node-version: 14.x
           cache: yarn
-      - name: Build website
-        run:
-          yarn install --frozen-lockfile
-          yarn build
+
+      - name: Get yarn cache
+        id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: ${{ runner.os }}-prescrypto-docs-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-prescrypto-docs-
+
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
 
       # Popular action to deploy to GitHub Pages:
       # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus

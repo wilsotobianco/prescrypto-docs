@@ -63,6 +63,10 @@ module.exports = {
               label: 'Tutorial',
               to: '/docs/tutorial/overview',
             },
+            {
+              label: 'Changelog',
+              to: '/docs/changelog/overview',
+            },
           ],
         },
         {
@@ -105,18 +109,9 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // editUrl:
-          // 'https://github.com/facebook/docusaurus/edit/master/website/',
-        },
-        pharmacy: {
-          sidebarPath: require.resolve('./sidebars.js'),
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // editUrl:
-          //  'https://github.com/facebook/docusaurus/edit/master/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

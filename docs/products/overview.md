@@ -58,3 +58,11 @@ curl -X GET \
     ...
 ]
 ```
+
+
+:::note Note: Only 5 medications will be displayed on every search
+
+Besides exists the following param `"page"` that it manage to navigate between the results  for example
+`/api/v2/standarddrug?query_string=medication&page=2` gets the second page of the results for the searching
+
+:::

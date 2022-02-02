@@ -63,10 +63,6 @@ payload = json.dumps({
   ],
   "extras": "Fiebre 38ºC, Cefaleas, escalofrios",
   "patient": {
-    "name": "George Constanza",
-    "email": "constanza@gmail.com",
-    "date_of_birth": "1989-01-28",
-    "external_patient_file": "GeCo_123123",
     "uid":"123123-12312-12312-123-123123123"
   }
 })
@@ -108,7 +104,6 @@ print(response.text)
             "drug_upc": "",
             "order_id": 0,
             "category": "standard_drug",
-            "ad_id": "",
             "qty_label": "1"
         },
         {
@@ -122,7 +117,6 @@ print(response.text)
             "drug_upc": "",
             "order_id": 0,
             "category": "standard_drug",
-            "ad_id": "",
             "qty_label": "1"
         }
     ],
@@ -200,5 +194,3 @@ response = requests.request("GET", url, headers=headers, data=payload)
 
 print(response.text)
 ```
-
-[EOF]

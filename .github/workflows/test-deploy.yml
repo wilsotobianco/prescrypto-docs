@@ -2,9 +2,8 @@ name: Test deployment
 
 on:
   pull_request:
-    branches: [main]
-    paths: 
-      - 'prescrypto-docs/**'
+    branches:
+      - main
 
 jobs:
   test-deploy:
@@ -16,8 +15,12 @@ jobs:
         with:
           node-version: 14.x
           cache: yarn
+
+      - name: Get yarn cache
+        id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
       - name: Test build
-        working-directory: prescrypto-docs
         run: |
           yarn install --frozen-lockfile
           yarn build

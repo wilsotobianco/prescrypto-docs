@@ -2,9 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
-    paths: 
-      - 'prescrypto-docs/**'
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -17,7 +16,6 @@ jobs:
           node-version: 14.x
           cache: yarn
       - name: Build website
-        working-directory: prescrypto-docs
         run:
           yarn install --frozen-lockfile
           yarn build

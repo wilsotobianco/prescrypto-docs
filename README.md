@@ -32,7 +32,7 @@ Deployment happens automatically whenever a PR is merged to ```main```.
 
 ### Manual deployment
 
-If for whatever reason, you need to deploy manually, the following command will deploy your checked out branch:
+If for whatever reason, you need to deploy manually, the following command will deploy your currently checked out branch:
 
 ```console
 yarn deploy

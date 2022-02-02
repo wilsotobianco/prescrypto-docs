@@ -10,8 +10,9 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'Prescrypto', // Usually your GitHub org/user name.
-  projectName: 'prescrypto-docs', // Usually your repo name.
+  organizationName: 'Prescrypto',
+  projectName: 'prescrypto-docs',
+  deploymentBranch: 'gh-pages', // this is the default value, added for clarity
   themeConfig: {
     navbar: {
       title: 'Prescrypto Docs',

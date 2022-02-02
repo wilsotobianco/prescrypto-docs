@@ -28,6 +28,8 @@ This command generates static content into the `build` directory and can be serv
 
 ## Deployment
 
+You **should** be using SSH, but if you are not, you need to define:
+
 ```console
 GIT_USER=<Your GitHub username> yarn deploy
 ```

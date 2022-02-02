@@ -2,8 +2,8 @@ name: Test deployment
 
 on:
   pull_request:
-    branches: [main]
-    paths: [prescrypto-docs/**]
+    branches: main
+    paths: prescrypto-docs/**
 
 jobs:
   test-deploy:

@@ -28,12 +28,22 @@ This command generates static content into the `build` directory and can be serv
 
 ## Deployment
 
+Deployment happens automatically whenever a PR is merged to ```main```.
+
+### Manual deployment
+
+If for whatever reason, you need to deploy manually, the following command will deploy your checked out branch:
+
+```console
+yarn deploy
+```
+
 You **should** be using SSH, but if you are not, you need to define:
 
 ```console
-GIT_USER=<Your GitHub username> yarn deploy
+GIT_USER=<Your GitHub username>
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and pushes the necessary contents to the deployment branch.
 
 Important note: When ask for the pass, use your personal access token(PAT) from github.

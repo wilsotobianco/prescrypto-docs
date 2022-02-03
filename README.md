@@ -46,4 +46,4 @@ GIT_USER=<Your GitHub username>
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and pushes the necessary contents to the deployment branch.
 
-Important note: When ask for the pass, use your personal access token(PAT) from github.
+Important note: When asked for the psswd, use your personal access token(PAT) from github.

@@ -39,9 +39,7 @@ print(result.json())
     "results": [
         {
             "id": 1,
-            "token": "123123123123123123",
             "name": "Elizabeth Blackwell",
-            "password": "pbkdf2_sha256$150000$X1Very36lhLongZ9GnBAStringnI5KWOnrnVQ=",
             "email": "hola@prescrypto.com",
             "hospital": 7,
             "date_of_birth": "1979-01-24",
@@ -59,10 +57,10 @@ print(result.json())
 }
 ```
 
-### List a Single Medic
+### Detail Medic
 You can also filter the information for a single account, by adding the Medic id to the endpoint route.
 
-```python title="GET /api/v2/medics/{{Medic_ID}}"
+```python title="GET /api/v2/medics/{{Medic_ID}}/"
 {{Base_URL}}/api/v2/medics/1/
 ```
 
@@ -171,7 +169,6 @@ The request body should be a "application/json" encoded object, containing the f
 |Parameter| Description|
 |---|---|
 |name | `String` for medic name|
-|password |`String` for medic password, This cannot be modified in this partial update.|
 |email| `String` 'Email address has to be unique or you'll get an error|
 |hospital |`int` , Token user has to be the ADMIN of the Hospital id|
 |date_of_birth|format: yyyy-mm-dd  eg 1990-12-31|
@@ -207,9 +204,7 @@ print(response.text)
 ```json title="[StatusCode: 202] The Medic has been updated successfully"
 {
     "id": 1,
-    "token": "eaeaeaeaeae123eaeaedummyToken",
     "name": "Daniel Hale Williams",
-    "password": "pbkdf2_sha256$150000$X1Very36lhLongZ9GnBAStringnI5KWOnrnVQ=",
     "email": "hola@prescrypto.com",
     "hospital": 1,
     "date_of_birth": "1992-09-22",

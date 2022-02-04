@@ -141,7 +141,6 @@ The `token` field is only showed on create response `POST` `"api/v2/medics"`
 :::
 
 
-
 > We verify the metadata of every medic on our plataform, if the medic has not specialty verified, shamely that medic couldn't create any prescription. Please let us know if your integrations have or haven't got specialty verified users
 
 

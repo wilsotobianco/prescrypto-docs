@@ -10,6 +10,11 @@ This sections aims to provide updates about changes to the Prescrypto API, where
 
 - (24 Jan, 2022) Add the param `page` to products docs, it explains how to navigate in products results
 
+- (4 Feb, 2022) Add the filter param `created_filter` for the endpoint `"api/v2/medics/"` It can be used to get the full list of created users, in order to see one medic details it has to be added to the url aswell.
+
+- (4 Feb, 2022) Remove `token` and `password(encrypted)` for the endpoint `"api/v2/medics/"` They only will be appear on created response. In order to increase security.
+
+Important note for  integrators: After create a medic, don't forget to save the `id`, `token` fields given in the response.
 
 
 ## Notifications

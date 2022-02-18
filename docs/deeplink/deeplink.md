@@ -20,7 +20,7 @@ The params specifications are below
 There is an example below with deeplink for autologin and autofill prescription:
 
 ```shell
-https://www.prescrypto.com/new/api_token/
+https://app.prescrypto.com/redirect/new/
 ?external_patient_file=< EXTERNAL-ID>
 &patient_email=< EMAIL>
 &patient_name=< NAME>

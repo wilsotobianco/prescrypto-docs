@@ -206,7 +206,7 @@ So the important field is `uid`. Save it.
 
 ### Adding Medications
 
-The medication object has a lot of useful fields, but in this tutorial only we take care of the needed in order to create a prescription. For more details see the [medication api](api/medication.md) section
+The medication object has a lot of useful fields, but in this tutorial only we take care of the needed in order to create a prescription.
 
 Example of a simple medication
 

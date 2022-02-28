@@ -14,6 +14,8 @@ This sections aims to provide updates about changes to the Prescrypto API, where
 
 - (4 Feb, 2022) Remove `token` and `password(encrypted)` for the endpoint `"api/v2/medics/"` They only will be appear on created response. In order to increase security.
 
+- (18 Feb, 2022) Remove `medications` section, instead check our [`Products` api docs](products/overview.md).
+
 Important note for  integrators: After create a medic, don't forget to save the `id`, `token` fields given in the response.
 
 

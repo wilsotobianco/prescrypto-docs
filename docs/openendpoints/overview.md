@@ -4,14 +4,14 @@ sidebar_position: 1
 
 # Overview
 
-This sections aims to show developers the endpoints that will display info about how to delivery the prescriptions
+This section aims to show developers the endpoints that will display info about how to fulfill a prescription.
 
 
-### Patient Landing Page
+### Patient Landing Endpoint
 
-Shows minimal prescription fields with campaigns objects, that could be useful for patients in order to get their medications.
+Shows necessary prescription fields with that could be useful for patients in order to purchase their medications.
 
-Note: This endpoint will be public in future, for now the token is required in the request headers.
+Note: This endpoint might be public in future, for now standard auth is required.
 
 
 Request example:

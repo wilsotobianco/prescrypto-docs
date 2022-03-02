@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - main
+      - develop
 
 jobs:
   test-deploy:
@@ -15,10 +16,6 @@ jobs:
         with:
           node-version: 14.x
           cache: yarn
-
-      - name: Get yarn cache
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
 
       - name: Test build
         run: |

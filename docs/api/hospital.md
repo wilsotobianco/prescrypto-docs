@@ -25,6 +25,9 @@ The information of the Hospital is used for the header and footer of the eRx, it
 |is_active|`Boolean` Indicates if this Hospital will be shown to the Members or not|
 |is_admin|`Boolean` indicates what is the Membership of the Medic for this Hospital|
 |info|`Boolean` Adds an additional information page to the PDF of the prescription|
+|location_lat|`String` Latitude of the Hospital and size :<32, we recommend using Google Maps latitude.|
+|location_lon|`String` Longitude of the Hospital and size :<32, we recommend using Google Maps longitude.|
+|zip_code|`String` Postal code of the Hospital and size:<32.|
 
 ## List all Hospitals
 The following parameters should be included as part of a URL query string.

@@ -16,25 +16,8 @@ Authentication : Token d3sjkT23Stks38jsnUk28012nIn
 Authentication keys will be provided through direct comunication, feel free to [contact us](https://prescrypto.com/contact).
 They are configured for production mode by default and can either be private for server-side usage or public for use in a browser. Be careful about sharing private keys as they have very powerful privileges.
 
-## Difference between Basic Drugs and Free Medications
-When you are creating the prescription payload you can notice that the medication field is a list of "Medication" objects, but these medications objects must be represented either a Basic Drug or Free Medication.
 
-### Basic Drugs
-A basic drug is a medication that is part of hospital or pharmacy's stock. Basically every medication with a "drug_upc". It can also be a "auxiliary_test" or "basic_drug", you can check more details in "category" field.
-
-
-```jsx
-// Example for a basic drug medication
-{
-  "presentation": "Algún Medicamento Libre",
-  "instructions": "Instrucciones para un medicamento libre",
-  "category": "basic_drug"
-}
-```
-
-Note: When the medication has de "drug_upc" means that the medication was selected by the medic using our product catalog.
-
-### Free Medications
+## Free Text Medications
 They are usually text manually by the doctor, without using our product catalog.
 
 Anything can be written on the "presentation" field.

@@ -67,7 +67,10 @@ print(result.json())
             "university_logo": "https://www.prescrypto.com/media/UNAM.jpg",
             "is_active": true,
             "is_admin": true,
-            "info": true
+            "info": true,
+            "location_lat": "19.42755149734502",
+            "location_lon": "-99.16844323991225",
+            "zip_code": "06500"
         }
     ]    
 }
@@ -138,7 +141,10 @@ Add "is_admin: false" if you want to specify a Memberhip of "member" instead of 
     "university_logo": null,
     "is_active": true,
     "is_admin": true,
-    "info": false
+    "info": false,
+    "location_lat": "",
+    "location_lon": "",
+    "zip_code": ""
 }
 ```
 

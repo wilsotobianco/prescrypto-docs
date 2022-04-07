@@ -219,5 +219,3 @@ print(response.text)
     "is_admin_membership": null
 }
 ```
-
-[EOF]

@@ -1,6 +1,8 @@
 ---
 sidebar_position: 2
 ---
+# Intro
+With this type of integration the Medic user will access Prescrypto through a "Deeplink", an URL filled with special parameters that will log automatically the user on the platform and can pre-fill certain fields as the patient data or diagnosis.
 
 # Deeplink
 

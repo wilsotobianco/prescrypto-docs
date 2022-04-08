@@ -627,3 +627,5 @@ Response HTTP_204_NO_CONTENT
 ```
 
 > Notice that the response is empty, but the status code is _204_
+
+[EOF]

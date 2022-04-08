@@ -33,3 +33,5 @@ https://app.prescrypto.com/redirect/new/
 &v2_redirect=true
 ```
 **IMPORTANT NOTE: All the param values have to be URI ENCODED, otherwise, the link could not work as expected**
+
+[EOF]

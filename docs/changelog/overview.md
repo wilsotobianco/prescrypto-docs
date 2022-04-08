@@ -26,3 +26,5 @@ Important note for  integrators: After create a medic, don't forget to save the 
 ## Notifications
 
 - The v1 endpoints are deprecated, so we encourage to all our users to update to v2
+
+[EOF]

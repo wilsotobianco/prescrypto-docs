@@ -66,3 +66,5 @@ Besides exists the following param `"page"` that it manage to navigate between t
 `/api/v2/standarddrug?query_string=medication&page=2` gets the second page of the results for the searching
 
 :::
+
+[EOF]

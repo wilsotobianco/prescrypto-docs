@@ -8,6 +8,8 @@ This sections aims to provide updates about changes to the Prescrypto API, where
 
 ## Log
 
+- (7 Apr, 2022) Removed unused parmateres mentions and references, cleaned some typos and compacted info from different pages into the same related ones.
+
 - (24 Jan, 2022) Add the param `page` to products docs, it explains how to navigate in products results
 
 - (4 Feb, 2022) Add the filter param `created_filter` for the endpoint `"api/v2/medics/"` It can be used to get the full list of created users, in order to see one medic details it has to be added to the url aswell.
@@ -24,3 +26,5 @@ Important note for  integrators: After create a medic, don't forget to save the 
 ## Notifications
 
 - The v1 endpoints are deprecated, so we encourage to all our users to update to v2
+
+[EOF]

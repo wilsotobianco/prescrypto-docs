@@ -7,7 +7,7 @@ sidebar_position: 1
 This sections aims to provide updates about changes to the Prescrypto API, where they were and how the new change improve or add new features.
 
 ## Log
-- (12 Jun, 2022) Add 'hospital' parameter to Deeplink in order to temporary set the hospital id of the Medic user.
+- (12 Jun, 2022) Add `hospital` parameter to Deeplink in order to temporary set the hospital id of the Medic user.
 
 - (7 Apr, 2022) Removed unused parmateres mentions and references, cleaned some typos and compacted info from different pages into the same related ones.
 

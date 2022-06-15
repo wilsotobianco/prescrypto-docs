@@ -7,6 +7,7 @@ sidebar_position: 1
 This sections aims to provide updates about changes to the Prescrypto API, where they were and how the new change improve or add new features.
 
 ## Log
+- (12 Jun, 2022) Add `hospital` parameter to Deeplink in order to temporary set the hospital id of the Medic user.
 
 - (7 Apr, 2022) Removed unused parmateres mentions and references, cleaned some typos and compacted info from different pages into the same related ones.
 
@@ -16,7 +17,7 @@ This sections aims to provide updates about changes to the Prescrypto API, where
 
 - (4 Feb, 2022) Remove `token` and `password(encrypted)` for the endpoint `"api/v2/medics/"` They only will be appear on created response. In order to increase security.
 
-- (18 Feb, 2022) Remove `medications` section, instead check our [`Products` api docs](products/overview.md).
+- (18 Feb, 2022) Remove `medications` section, instead check our [Products api docs](products/overview.md).
 
 - (1 Mar, 2022) Add `Patient landing page` endpoint documentation, on the new section [Prescription CTA endpoints](openendpoints/overview.md).
 

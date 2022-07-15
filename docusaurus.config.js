@@ -43,6 +43,11 @@ module.exports = {
           label: 'Products',
         },
         {
+          to: 'docs/elements/overview',
+          position: 'left',
+          label: 'Elements',
+        },
+        {
           href: 'https://github.com/Prescrypto/',
           label: 'GitHub',
           position: 'right',

@@ -4,17 +4,13 @@ sidebar_position: 1
 
 # Quick Start
 
-A collection of [custom elements](https://web.dev/custom-elements-v1/) for implementing Prescrypto functionality on your site.
+A collection of [custom elements](https://web.dev/custom-elements-v1/) for implementing Prescrypto functionality on your site. Prescrypto Elements can be used with a `<script>` tag or with your bundler of choice (Vite, Webpack, Rollup, etc).
 
-## Quick Start
-
-Prescrypto Elements can be used with a `<script>` tag or with your bundler of choice (Vite, Webpack, Rollup, etc).
-
-### CDN
+## CDN
 
 ```html
 <!-- 1. Load PrescryptoElements into the global scope  -->
-<script src="https://unpkg.com/prescrypto-elements@1.0.10/dist/prescrypto-elements.umd.js"></script>
+<script src="https://unpkg.com/prescrypto-elements@^1/dist/prescrypto-elements.umd.js"></script>
 
 <!-- 2. Register a custom element. In this example, the Rx history widget "PrxPrescriptions" -->
 <script type="text/javascript">
@@ -25,7 +21,7 @@ Prescrypto Elements can be used with a `<script>` tag or with your bundler of ch
 <prx-prescriptions token="my-prx-token"></prx-prescriptions>
 ```
 
-### Library
+## Library
 
 1. Install [`prescrypto-elements`](https://www.npmjs.com/package/prescrypto-elements). from NPM.
 

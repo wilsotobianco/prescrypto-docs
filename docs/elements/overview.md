@@ -23,7 +23,7 @@ A collection of [custom elements](https://web.dev/custom-elements-v1/) for imple
 
 ## Library
 
-1. Install [`prescrypto-elements`](https://www.npmjs.com/package/prescrypto-elements). from NPM.
+1. Install [`prescrypto-elements`](https://www.npmjs.com/package/prescrypto-elements) from NPM.
 
     ```sh
     # NPM

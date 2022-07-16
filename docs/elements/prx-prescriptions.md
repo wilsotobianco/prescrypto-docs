@@ -22,12 +22,12 @@ A data table of the latest prescriptions, sorted by date.
 
 ## Attributes
 
-| Attribute         | Required? |  Type  | Default | Description  |
-|-------------------|-----------|--------|---------|---|
-| token             |     ✅    | string |   none  | An [authentication token][1] for Prescrypto.               |
-| limit             |     ❌    | number |    10   | How many prescriptions to display in the table.            |
-| offset            |     ❌    | number |    0    | Offset the results by an amount for pagination.            |
-| search            |     ❌    | string |   none  | Filter the results by a search query.                      |
-| externalPatientId |     ❌    | string |   none  | Filter the results by an external integration's patient id |
+| Attribute         | Required? |  Type  | Default | Description                                                 |
+|-------------------|-----------|--------|---------|-------------------------------------------------------------|
+| token             |     ✅    | string |   none  | An [authentication token][1] for Prescrypto.                |
+| limit             |     ❌    | number |    10   | How many prescriptions to display in the table.             |
+| offset            |     ❌    | number |    0    | Offset the results by an amount for pagination.             |
+| search            |     ❌    | string |   none  | Filter the results by a search query.                       |
+| externalPatientId |     ❌    | string |   none  | Filter the results by an external integration's patient id. |
 
 [1]: ../intro.md

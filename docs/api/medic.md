@@ -81,7 +81,7 @@ You can create as many Medics as needed. A Medic requires to be a member of an "
 |alma_mater|`String` name of the University|
 |female|`boolean` Gender of the medic, will be used for medic title "Dr" or "Dra" |
 |is_active|`boolean` to deactive or active accounts, this has nothing to do with cedula validation|
-|campaign|`int` It assigns automatically a campaign to a medic, ask adminstrators to create a campaign first|
+|campaign|`String` Assigns a campaign to a Medic, if you need a specific campaign ask an admin to create it first|
 |is_admin_membership|`boolean` to indicate what kind of ownership the Medic has to an hospital, can be an "Admin" or a "Member", Admins can edit the Hospital, members only use it|
 
 :::note
@@ -106,7 +106,8 @@ payload = json.dumps({
   "specialty": "Medicina General",
   "alma_mater": "Universidad Nacional Autónoma de México",
   "female": False,
-  "is_active": True
+  "is_active": True,
+  "campaign": "PalabraClaveAsociadaAUnaCampaña"
 })
 headers = {
   'Authorization': 'Token {{Token}}',
@@ -141,7 +142,7 @@ If you want to add this Medic to an Hospital that you have created, you can add 
     "female": false,
     "is_active": true,
     "specialty_verified": false,
-    "campaign": null,
+    "campaign": "PalabraClaveAsociadaAUnaCampaña",
     "is_admin_membership": null
 }
 ```
@@ -178,7 +179,7 @@ The request body should be a "application/json" encoded object, containing the f
 |alma_mater|`String` name of the University|
 |female|`boolean` Gender of the medic, will be used for medic title "Dr" or "Dra" |
 |is_active|`boolean` to deactive or active accounts, this has nothing to do with cedula validation|
-|campaign|`int` It assigns automatically a campaign to a medic, ask adminstrators to create a campaign first|
+|campaign|`String` Assigns a campaign to a Medic, if you need a specific campaign ask an admin to create it first|
 |is_admin_membership|`boolean` to indicate what kind of ownership the Medic has to an hospital, can be an "Admin" or a "Member", Admins can edit the Hospital, members only use it|
 
 ```python title="PATCH /api/v2/medics/{{Medic_ID}}"

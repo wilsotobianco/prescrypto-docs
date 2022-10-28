@@ -81,7 +81,7 @@ You can create as many Medics as needed. A Medic requires to be a member of an "
 |alma_mater|`String` name of the University|
 |female|`boolean` Gender of the medic, will be used for medic title "Dr" or "Dra" |
 |is_active|`boolean` to deactive or active accounts, this has nothing to do with cedula validation|
-|campaign|`String` It assigns automatically a campaign to a medic, if you need a specific campaign, ask adminstrators to create a campaign first to can be use it|
+|campaign|`String` Assigns a campaign to a Medic, if you need a specific campaign ask an admin to create it first|
 |is_admin_membership|`boolean` to indicate what kind of ownership the Medic has to an hospital, can be an "Admin" or a "Member", Admins can edit the Hospital, members only use it|
 
 :::note
@@ -179,7 +179,7 @@ The request body should be a "application/json" encoded object, containing the f
 |alma_mater|`String` name of the University|
 |female|`boolean` Gender of the medic, will be used for medic title "Dr" or "Dra" |
 |is_active|`boolean` to deactive or active accounts, this has nothing to do with cedula validation|
-|campaign|`String` It assigns automatically a campaign to a medic, if you need a specific campaign, ask adminstrators to create a campaign first to can be use it|
+|campaign|`String` Assigns a campaign to a Medic, if you need a specific campaign ask an admin to create it first|
 |is_admin_membership|`boolean` to indicate what kind of ownership the Medic has to an hospital, can be an "Admin" or a "Member", Admins can edit the Hospital, members only use it|
 
 ```python title="PATCH /api/v2/medics/{{Medic_ID}}"

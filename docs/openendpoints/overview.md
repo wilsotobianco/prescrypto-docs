@@ -34,6 +34,10 @@ Response:
 		"signature": "0194f15c10710492f5045e90637cf91dc4c24711b8ccb2fdabc9a5245435aab2",
 		"raw_size": 391664,
 		"created_at": "2021-11-03T07:38:59.688194Z",
+		"medic": {
+			"name": "Jesus Alvarado Garzon"
+		},
+		"extras": "Indicaciones Extras",
 		"medications": [
 			{
 				"id": 376,
@@ -62,9 +66,17 @@ Response:
 				"drug_upc": "745a7dfd39709c8cebee90ef32f1adca340e3a54fb509fd0331253d20d32bbdf"
 			}
 		],
-		"medic": {
-			"name": "Jesus Alvarado Garzon"
-		}
+		"status": [
+            "rejected",
+            "Rechazada"
+        ],
+        "available_status": [
+            false,
+            "No puedes surtir esta receta"
+        ],
+        "transaction_url": "",
+        "qr_link": ""
+
 	},
 	"campaigns": [
 		{
@@ -78,26 +90,7 @@ Response:
 			"display_contact": "55 8097 0039 (Whatsapp) Entrega a domicilio en toda la república. Guadalajara, mty, cdmx mismo día, resto de la rep. Entre 24 y 48hrs",
 			"cta_link": "https://staging.prescrypto.com/e/prixz/63"
 		}
-	],
-	"default_campaign": {
-		"id": 4,
-		"short_name": "walmex",
-		"branches": [
-			{
-				"Determinante": 3825,
-				"name": "San Mateo",
-				"Formato": "Walmart Express",
-				"Estado": "Estado de México",
-				"address": "Camino a San Mateo Nopala No.20 Col. Sta Cruz Acatlan 53240 Naucalpan, Estado de Mexico"
-			}
-		],
-		"callback_redirect": "landing_view",
-		"main_site_redirect": "landing_view",
-		"display_name": "Walmart",
-		"display_phone": "55 0000 0000",
-		"display_contact": "Grupo Walmart",
-		"cta_link": "https://staging.prescrypto.com/e/walmex/63"
-	}
+	]
 }
 
 ```

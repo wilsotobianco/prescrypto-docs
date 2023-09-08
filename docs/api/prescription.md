@@ -16,33 +16,242 @@ The following parameters may be included as part of a URL query string.
 |limit	|Number of results to return per page.|
 |offset|	The initial index from which to return the results.|
 
+#### GET List all Prescriptions
 ```python title="GET /api/v2/rx-endpoint/"
 import requests
-import json
 
 url = "{{Base_URL}}/api/v2/rx-endpoint/"
 
-payload={}
 headers = {
-  'Authorization': 'Token {{Token}}',
-  'Content-Type': 'application/json'
+  'Authorization': 'Token {{Token}}'
 }
 
-response = requests.request("GET", url, headers=headers, data=payload)
+response = requests.request("GET", url, headers=headers)
 
 print(response.text)
+```
+
+#### Response to List all Prescriptions
+```json title="[StatusCode: 200]"
+{    
+    "count": 2,
+    "next": "{{Base_URL}}/api/v2/medics/?limit=15&offset=15",
+    "previous": null,
+    "results": [
+        {
+            "id": 2714,
+            "hospital": {
+                "id": 7,
+                "patron": "Prescrypto",
+                "location": "Avenida Paseo de la Reforma 369, Colonia Cuauhtémoc, Mexico City, CDMX, Mexico"
+            },
+            "clinic": null,
+            "medic": "hola@prescrypto.com",
+            "patient": {
+                "uid": "1231231-123123-12313-123-123123123",
+                "name": "Ely de Prescrypto",
+                "email": "test@prescrpyot.com",
+                "phone": "",
+                "date_of_birth": "2000-03-13",
+                "gender": "M"
+            },
+            "diagnosis": "",
+            "medications": [
+                {
+                    "id": 393,
+                    "presentation": "Aspirina 30 Tabletas (Ácido Acetilsalicílico 100 mg)",
+                    "instructions": "Tomar una cada 8 horas",
+                    "drug": "Aspirina 30 Tabletas (Ácido Acetilsalicílico 100 mg)",
+                    "cost": 0.0,
+                    "bought": false,
+                    "qty": 1,
+                    "bought_qty": 0,
+                    "category": "standard_drug",
+                    "qty_label": "",
+                    "drug_upc": "1234567890"
+                }
+            ],
+            "extras": "",
+            "signature": "12345678990",
+            "created_at": "2023-09-07",
+            "sent": true,
+            "send_rx": true,
+            "show_diagnosis": false,
+            "bought": false,
+            "rejected": false,
+            "cta_link": "",
+            "status": {
+                "rx_status": [
+                    "available",
+                    "Disponible"
+                ],
+                "sent_status": [
+                    "sent_email",
+                    "Email enviado"
+                ]
+            },
+            "reason_of_rejected": ""
+        },
+        {
+            "id": 2713,
+            "hospital": {
+                "id": 7,
+                "patron": "Prescrypto",
+                "location": "Avenida Paseo de la Reforma 369, Colonia Cuauhtémoc, Mexico City, CDMX, Mexico"
+            },
+            "clinic": null,
+            "medic": "jason@prescrypto.com",
+            "patient": {
+                "uid": "1231231-123123-12313-123-123123123",
+                "name": "Ely de Prescrypto",
+                "email": "test@prescrpyto.com",
+                "phone": "",
+                "date_of_birth": "2000-03-13",
+                "gender": "M"
+            },
+            "diagnosis": "",
+            "medications": [
+                {
+                    "id": 3938,
+                    "presentation": "Aspirina",
+                    "instructions": "Tomar una cada 8 horas",
+                    "drug": "Aspirina 30 Tabletas (Ácido Acetilsalicílico 100 mg)",
+                    "cost": 0.0,
+                    "bought": false,
+                    "qty": 1,
+                    "bought_qty": 0,
+                    "category": "standard_drug",
+                    "qty_label": "",
+                    "drug_upc": "1234567890"
+                }
+            ],
+            "extras": "",
+            "signature": "1234567890",
+            "created_at": "2023-09-08",
+            "sent": true,
+            "send_rx": true,
+            "show_diagnosis": false,
+            "bought": false,
+            "rejected": false,
+            "cta_link": "",
+            "status": {
+                "rx_status": [
+                    "available",
+                    "Disponible"
+                ],
+                "sent_status": [
+                    "sent_email",
+                    "Email enviado"
+                ]
+            },
+            "reason_of_rejected": ""
+        }
+    ]
+}
+```
+```json title="[Error: 401] Token invalid"
+{
+    "detail": "Token inválido."
+}
 ```
 
 ### List a Single Prescription
 You can also filter the information for a single prescription, by adding the prescription id to the endpoint route.
 
+#### GET List a Single Prescription
 ```python title="GET /api/v2/rx-endpoint/{{rx_ID}}"
-{{Base_URL}}/api/v2/rx-endpoint/123/
+import requests
+import json
+
+url = "{{Base_URL}}/api/v2/rx-endpoint/{{rx_ID}}"
+
+headers = {
+  'Authorization': 'Token {{Token}}'
+}
+
+response = requests.request("GET", url, headers=headers)
+
+print(response.text)
 ```
+#### Response to List all Prescriptions
+```json title="[StatusCode: 200]"
+{   
+    "count": 1,
+    "next": "{{Base_URL}}/api/v2/medics/?limit=15&offset=15",
+    "previous": null,
+    "results": [
+        {
+            "id": 2714,
+            "hospital": {
+                "id": 7,
+                "patron": "Prescrypto",
+                "location": "Avenida Paseo de la Reforma 369, Colonia Cuauhtémoc, Mexico City, CDMX, Mexico"
+            },
+            "clinic": null,
+            "medic": "hola@prescrypto.com",
+            "patient": {
+                "uid": "1231231-123123-12313-123-123123123",
+                "name": "Ely de Prescrypto",
+                "email": "test@prescrpyot.com",
+                "phone": "",
+                "date_of_birth": "2000-03-13",
+                "gender": "M"
+            },
+            "diagnosis": "",
+            "medications": [
+                {
+                    "id": 393,
+                    "presentation": "Aspirina",
+                    "instructions": "Tomar una cada 8 horas",
+                    "drug": "Aspirina 30 Tabletas (Ácido Acetilsalicílico 100 mg)",
+                    "cost": 0.0,
+                    "bought": false,
+                    "qty": 1,
+                    "bought_qty": 0,
+                    "category": "standard_drug",
+                    "qty_label": "",
+                    "drug_upc": "1234567890"
+                }
+            ],
+            "extras": "",
+            "signature": "12345678990",
+            "created_at": "2023-09-07",
+            "sent": true,
+            "send_rx": true,
+            "show_diagnosis": false,
+            "bought": false,
+            "rejected": false,
+            "cta_link": "",
+            "status": {
+                "rx_status": [
+                    "available",
+                    "Disponible"
+                ],
+                "sent_status": [
+                    "sent_email",
+                    "Email enviado"
+                ]
+            },
+            "reason_of_rejected": ""
+        }
+    ]
+}
+```
+```json title="[Error: 404] Prescription not found"
+{
+    "detail": "No encontrado."
+}
+```
+```json title="[Error: 401] Token invalid"
+{
+    "detail": "Token inválido."
+}
+```
+
 
 ## Create a Prescription
 
-
+####POST Create a Prescription
 ```python title="POST /api/v2/rx-endpoint"
 import requests
 import json
@@ -77,17 +286,15 @@ print(response.text)
 ```
 
 
-### Response
-
-
-```json title="[StatusCode: 201] Success!"
+#### Response to Create a Prescription
+```json title="[StatusCode: 200] Success!"
 {
     "id": 123,
     "hospital": 1,
     "clinic": null,
     "medic": "Elizabeth@prescrypto.com",
     "patient": {
-        "uid":"123123-12312-12312-123-123123123",
+        "uid": "123123-12312-12312-123-123123123",
         "name": "George Constanza",
         "email": "constanza@gmail.com"
     },
@@ -121,7 +328,7 @@ print(response.text)
         }
     ],
     "extras": "Fiebre 38ºC, Cefaleas, escalofrios",
-    "signature": "12sd2jaskjnd13EsteEsElIDDeLaReceta",
+    "signature": "12sd2jaskjnd13",
     "created_at": "2020-06-30",
     "sent": null,
     "send_rx": true,
@@ -129,13 +336,26 @@ print(response.text)
     "show_diagnosis": false,
     "rejected": false,
     "bought": false,
-    "cta_link": "https://www.prescrypto.com/r/Vj"
+    "cta_link": ""
 }
 
+```
+```json title="[Error: 400] The required field field_name is missing"
+{
+    "field_name": [
+        "Este campo es requerido."
+    ]
+}
+```
+```json title="[Error: 401] Token invalid"
+{
+    "detail": "Token inválido."
+}
 ```
 
 ## Resend a Prescription
 
+#### POST Resend a Prescription
 ```python title="POST /api/v2/rx/resend/{{signature}}/"
 import requests
 import json
@@ -156,43 +376,139 @@ response = requests.request("POST", url, headers=headers, data=payload)
 print(response.text)
 ```
 
+#### Respose to Resend a Prescription
+```json title="[StatusCode: 200] Success! "
+{
+    "detail": "Se ha re-enviado la receta, si persisten problemas de envio, verifique que su paciente haya aceptado recibir correo de parte de Prescrypto así como que no esté llegando a la bandeja de correos no deseados."
+}
+```
+
+```json title="[Error: 404] Rx not found"
+{
+    "detail": "Receta no encontrada con signature: 1234567890"
+}
+```
+```json title="[Error: 401] Token invalid"
+{
+    "detail": "Token inválido."
+}
+```
 
 ## Download a Prescription in PDF(Base64)
 Prescriptions can be downloaded in their PDF representation with this endpoint, the response will be in base64, which will be needed to decode from base64 to PDF.
 
+#### GET Download a Prescription
 ```python title="GET /api/v2/rx/pdf/{{eRx_Signature}}/"
 import requests
-import json
 
-url = "{{Base_URL}}/api/v2/rx/pdf/eb2bd28dfac8f64207f7ad356d30a461741fc728ad55fe84c321ccd1e32634b3/"
+url = "{{Base_URL}}/api/v2/rx/pdf/{{eRx_Signature}}/"
 
-payload = json.dumps({})
 headers = {
   'Authorization': 'Token {{Token}}',
   'Content-Type': 'application/json'
 }
 
-response = requests.request("GET", url, headers=headers, data=payload)
+response = requests.request("GET", url, headers=headers)
 
 print(response.text)
 ```
+#### Respose to Download a Prescription
+```json title="[StatusCode: 200] Success! "
+{
+    "pdf": "pdf_in_base_64"
+}
+```
+```json title="[Error: 404] Rx not found"
+{
+    "error": "rx not found"
+}
+```
+```json title="[Error: 401] Token invalid"
+{
+    "detail": "Token inválido."
+}
+```
+
 
 ## Search Prescription 
 A Prescription can be searched by the name of the [Patient](patient.md), the email, or the diagnosis.
 
+#### GET Search Prescription
 ```python title="GET /api/v2/rx-endpoint/?search=Gripe/"
 import requests
 
 url = "{{Base_URL}}/api/v2/rx-endpoint/?search={{query}}"
 
-payload={}
 headers = {
   'Authorization': 'Token {{Token}}'
 }
 
-response = requests.request("GET", url, headers=headers, data=payload)
+response = requests.request("GET", url, headers=headers)
 
 print(response.text)
+```
+
+#### Respose to Search Prescription
+```json title="[StatusCode: 200] Success! "
+{
+    "id": 271,
+    "hospital": {
+        "id": 25,
+        "patron": "Prescrypto",
+        "location": "Avenida Paseo de la Reforma 369, Colonia Cuauhtémoc, Mexico City, CDMX, Mexico"
+    },
+    "clinic": null,
+    "medic": "hola@prescrypto.com",
+    "patient": {
+        "uid": "123123-12312-12312-123-123123123",
+        "name": "Ely de Prescrypto",
+        "email": "hola@prescrypto.com",
+        "phone": "",
+        "date_of_birth": "1983-02-01",
+        "gender": "M"
+    },
+    "diagnosis": "",
+    "medications": [
+        {
+            "id": 23,
+            "presentation": "Aspirina Protect",
+            "instructions": "Tomar 1 pastilla cada 8 horas durante 7 dias",
+            "cost": 0.0,
+            "bought": false,
+            "qty": 1,
+            "bought_qty": 0,
+            "drug_upc": "",
+            "order_id": 0,
+            "category": "standard_drug",
+            "qty_label": "1"
+        }
+    ],
+    "extras": "Indicaciones Extras",
+    "signature": "12344567890",
+    "created_at": "2023-09-08",
+    "sent": null,
+    "send_rx": true,
+    "show_diagnosis": false,
+    "bought": false,
+    "rejected": false,
+    "cta_link": "",
+    "status": {
+        "rx_status": [
+            "available",
+            "Disponible"
+        ],
+        "sent_status": [
+            "pending",
+            "Pendiente de envio"
+        ]
+    },
+    "reason_of_rejected": ""
+}
+```
+```json title="[Error: 401] Token invalid"
+{
+    "detail": "Token inválido."
+}
 ```
 
 [EOF]

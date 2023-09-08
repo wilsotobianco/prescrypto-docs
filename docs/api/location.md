@@ -10,23 +10,23 @@ The use of this endpoint it's focused on integrations where the Medic has access
 ## List all Locations
 It will list the Hospitals in which the Medic has a Membership.
 
+#### GET List all Locations
 ```python title="GET /api/v2/locations/"
 import requests
 
 url = "{{Base_URL}}api/v2/locations/"
 
-payload={}
 headers = {
   'Authorization': 'Token {{token}}'
 }
 
-response = requests.request("GET", url, headers=headers, data=payload)
+response = requests.request("GET", url, headers=headers)
 
 print(response.text)
 
 ```
 
-### Response
+#### Response to List all Locations
 ```json title="[StatusCode: 200]"
 [
     {
@@ -61,26 +61,52 @@ print(response.text)
     }
 ]
 ```
+```json title="[Error: 401] Token invalid"
+{
+    "detail": "Token inválido."
+}
+```
 
 ## Update Locations
 
 It will change the default "Active" Hospital for which the Medic will prescribe.
 
+#### PATCH Update Locations
 ```python title="PATCH /api/v2/locations/update/"
 import requests
 
 url = "{{Base_URL}}api/v2/locations/update/"
 
-payload={"hospital_id": 35}
+payload={
+  "hospital_id": 35
+}
+
 headers = {
   'Authorization': 'Token {{token}}',
   'Content-Type': 'application/json'
 }
 
-response = requests.request("GET", url, headers=headers, data=payload)
+response = requests.request("PATCH", url, headers=headers, data=payload)
 
 print(response.text)
 
+```
+#### Response to List all Locations
+```json title="[StatusCode: 200]"
+{
+    "message": "HOSPITAL UPDATE SUCCESSFULLY"
+}
+```
+
+```json title="[Error: 404] Hospital not found"
+{
+    "message": "HOSPITAL NOT FOUND"
+}
+```
+```json title="[Error: 401] Token invalid"
+{
+    "detail": "Token inválido."
+}
 ```
 
 [EOF]

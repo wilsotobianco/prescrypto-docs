@@ -37,17 +37,22 @@ The following parameters should be included as part of a URL query string.
 |limit|	Number of results to return per page.|
 |offset| The initial index from which to return the results.|
 
+#### GET List all Hospitals
 ```python title="GET /api/v2/hospital"
 import requests
 import json
 # Assign the necessary parameters for the request (url and parameters payload)
-url = "/api/v2/hospital/"
+url = "{{Base_URL}}/api/v2/hospital/"
 
-result = requests.get(url=url)
+headers = {
+  'Authorization': 'Token {{YOUR_TOKEN}}'
+}
+
+result = requests.get(url=url, headers=headers)
 print(result.json())
 ```
 
-### Response
+#### Response to List all Hospitals
 ```json title="[StatusCode: 200] Success here are all your Hospitals created"
 {   
     "count": 1,
@@ -63,24 +68,74 @@ print(result.json())
             "contact": "hola@prescrypto.com",
             "headline": "LLegando a tu corazon desde 1893",
             "page_size": false,
+            "page_template": "classic",
             "picture": "https://www.prescrypto.com/media/Cardiologia.jpg",
             "university_logo": "https://www.prescrypto.com/media/UNAM.jpg",
             "is_active": true,
             "is_admin": true,
             "info": true,
+            "send_emails": true,
+            "zip_code": "06500",
             "location_lat": "19.42755149734502",
             "location_lon": "-99.16844323991225",
-            "zip_code": "06500"
+            "google_place_id": ""
         }
     ]    
 }
 ```
 
-### List a Single Hospital
+```json title="[Error: 401] Token invalid"
+{
+    "detail": "Token inválido."
+}
+```
+
 You can also filter the information for a single Hospital, by adding the Hospital id to the endpoint route.
 
+#### GET Single Hospital
 ```python title="GET /api/v2/hospital/{{Hospital_ID}}"
-{{Base_URL}}/api/v2/hospital/1/
+import requests
+import json
+# Assign the necessary parameters for the request (url and parameters payload)
+url = "{{Base_URL}}/api/v2/hospital/{{Hospital_ID}}"
+
+headers = {
+  'Authorization': 'Token {{YOUR_TOKEN}}'
+}
+
+result = requests.get(url=url, headers=headers)
+print(result.json())
+```
+
+#### Response to Single Hospital
+```json title="[StatusCode: 200] Success here are the details of the Hospital of choice"
+{
+    "id": 1,
+    "created_at": "2016-01-01T04:22:12Z",
+    "name": "Consultorio Daniel Hale Williams",
+    "patron": "Consultorio Daniel Hale Williams",
+    "location": "Paseo de la Reforma , Cuauhtémoc, 06500 Ciudad de México",
+    "contact": "hola@prescrypto.com",
+    "headline": "LLegando a tu corazon desde 1893",
+    "page_size": false,
+    "page_template": "classic",
+    "picture": "https://www.prescrypto.com/media/Cardiologia.jpg",
+    "university_logo": "https://www.prescrypto.com/media/UNAM.jpg",
+    "is_active": true,
+    "is_admin": true,
+    "info": true,
+    "send_emails": true,
+    "zip_code": "06500",
+    "location_lat": "19.42755149734502",
+    "location_lon": "-99.16844323991225",
+    "google_place_id": ""
+}
+```
+
+```json title="[Error: 404] Hospital not found or your token do not created the Hospital"
+{
+    "detail": "No encontrado."
+}
 ```
 
 ## Create Hospital
@@ -94,11 +149,12 @@ This are the required fields to create an Hospital.
 |location `required`|`String` Adress of the Hospital, it has to be completed, with Postal code, State, etc|
 |contact `required`|`String` email or Phone for contact|
 
+#### POST Create Hospital
 ```python title="POST /api/v2/hospital/"
 import requests
 import json
 
-url = "{{Base_URL}}/api/v2/hospital/"
+url = "{{BASE_URL}}/api/v2/hospital/"
 
 payload = json.dumps({
   "name": "Prescrypto ",
@@ -108,7 +164,7 @@ payload = json.dumps({
   "is_admin": True
 })
 headers = {
-  'Authorization': 'Token {{Token}}',
+  'Authorization': 'Token {{YOUR_TOKEN}}',
   'Content-Type': 'application/json'
 }
 
@@ -125,7 +181,7 @@ Add "is_admin: false" if you want to specify a Memberhip of "member" instead of 
 :::
 
 
-### Response
+#### Response to Create Hospital
 
 ```python title="[StatusCode: 201] Success the Hospital has been created"
 {
@@ -137,14 +193,17 @@ Add "is_admin: false" if you want to specify a Memberhip of "member" instead of 
     "contact": "hola@prescrypto.com",
     "headline": "",
     "page_size": false,
+    "page_template": "classic",
     "picture": null,
     "university_logo": null,
     "is_active": true,
     "is_admin": true,
     "info": false,
+    "send_emails": true,
+    "zip_code": "",
     "location_lat": "",
     "location_lon": "",
-    "zip_code": ""
+    "google_place_id": ""
 }
 ```
 
@@ -157,14 +216,16 @@ The following parameters should be included in the URL path.
 |--|--|
 |id `required`|	`Int` The unique integer value identifying this hospital|
 
-```python title="PATCH /api/v2/hospital/{{id}}"
+#### PATCH Update Hospital
+
+```python title="PATCH /api/v2/hospital/{{Hospital_ID}}"
 import requests
 import json
 
-url = "{{Base_URL}}/api/v2/hospital/1/"
+url = "{{BASE_URL}}/api/v2/hospital/{{Hospital_ID}}/"
 
 payload = json.dumps({
-  "contact": "mola@prescrypto.com"
+  "contact": "nuevo_hola@prescrypto.com"
 
 })
 headers = {
@@ -175,6 +236,37 @@ headers = {
 response = requests.request("POST", url, headers=headers, data=payload)
 
 print(response.text)
+```
+
+#### Response to Update Hospital
+```python title="[StatusCode: 201] Success updated Hospital"
+{
+    "id": 1,
+    "created_at": "2016-01-30T00:49:09.790586Z",
+    "name": "Prescrypto ",
+    "patron": "Prescrypto S.A.P.I. de C.V.",
+    "location": "Paseo de la Reforma #369, Col. Cuauhtémoc, Alc. Cuauhtémoc ,C.P. 06500, Ciudad de México",
+    "contact": "nuevo_hola@prescrypto.com",
+    "headline": "",
+    "page_size": false,
+    "page_template": "classic",
+    "picture": null,
+    "university_logo": null,
+    "is_active": true,
+    "is_admin": true,
+    "info": false,
+    "send_emails": true,
+    "zip_code": "",
+    "location_lat": "",
+    "location_lon": "",
+    "google_place_id": ""
+}
+```
+
+```json title="[Error: 404] Hospital not found or your token do not created the Hospital"
+{
+    "detail": "No encontrado."
+}
 ```
 
 [EOF]

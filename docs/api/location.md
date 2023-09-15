@@ -31,31 +31,31 @@ print(response.text)
 [
     {
         "hospital": {
-            "name": "Clinica San Gregorio",
+            "name": "Hospital 1",
             "id": 23,
-            "location": "Clzd Tlalpan #123, col. Portales, CDMX"
+            "location": "Nombre de la Calle, Colonia, CP, Alcaldia, Estado"
         },
         "default": true,
         "clinics": [
             {
                 "id": null,
-                "name": "Clinica San Gregorio",
-                "location": "Clzd Tlalpan #123, col. Portales, CDMX"
+                "name": "Clínica 1 del Hospital 2",
+                "location": "Nombre de la Calle, Colonia, CP, Alcaldia, Estado"
             }
         ]
     },
     {
         "hospital": {
-            "name": "Hospitals Las Animas",
+            "name": "Hospital 2",
             "id": 35,
-            "location": "Ciudad de Mexico, 06500"
+            "location": "Nombre de la Calle, Colonia, CP, Alcaldia, Estado"
         },
         "default": false,
         "clinics": [
             {
                 "id": null,
-                "name": "Hospitals Las Animas",
-                "location": "Ciudad de Mexico, 06500"
+                "name": "Clínica 1 del Hospital 2",
+                "location": "Nombre de la Calle, Colonia, CP, Alcaldia, Estado"
             }
         ]
     }

@@ -31,11 +31,11 @@ Response:
 ```
 {
 	"rx": {
-		"signature": "0194f15c10710492f5045e90637cf91dc4c24711b8ccb2fdabc9a5245435aab2",
-		"raw_size": 391664,
+		"signature": "1234567890",
+		"raw_size": 1234567890,
 		"created_at": "2021-11-03T07:38:59.688194Z",
 		"medic": {
-			"name": "Jesus Alvarado Garzon"
+			"name": "Matilde Montoya"
 		},
 		"extras": "Indicaciones Extras",
 		"medications": [
@@ -46,11 +46,11 @@ Response:
 				"drug": "Prueba de Deteccion de SARS-CoV-2 (COVID-19)",
 				"cost": 0.0,
 				"bought": false,
-				"qty": 1001,
+				"qty": 1,
 				"bought_qty": 0,
-				"category": "standard_drug",
-				"qty_label": "Sin suspender",
-				"drug_upc": "83cd6128a7f3f50dab182b20cee7aa966a2255e77ba2d16b200f2c2d191430e4"
+				"category": "s",
+				"qty_label": "",
+				"drug_upc": "1234567890"
 			},
 			{
 				"id": 375,
@@ -61,9 +61,9 @@ Response:
 				"bought": false,
 				"qty": 3,
 				"bought_qty": 0,
-				"category": "standard_drug",
+				"category": "",
 				"qty_label": "",
-				"drug_upc": "745a7dfd39709c8cebee90ef32f1adca340e3a54fb509fd0331253d20d32bbdf"
+				"drug_upc": "0987654321"
 			}
 		],
 		"status": [
@@ -81,14 +81,14 @@ Response:
 	"campaigns": [
 		{
 			"id": 5,
-			"short_name": "prixz",
+			"short_name": "",
 			"branches": [],
 			"callback_redirect": "https://www.prescrypto.com/contact/",
-			"main_site_redirect": "https://prixz.com/",
-			"display_name": "Prixz",
-			"display_phone": "55 8097 0039",
-			"display_contact": "55 8097 0039 (Whatsapp) Entrega a domicilio en toda la república. Guadalajara, mty, cdmx mismo día, resto de la rep. Entre 24 y 48hrs",
-			"cta_link": "https://staging.prescrypto.com/e/prixz/63"
+			"main_site_redirect": "",
+			"display_name": "",
+			"display_phone": "55 5555 5555",
+			"display_contact": "",
+			"cta_link": ""
 		}
 	]
 }

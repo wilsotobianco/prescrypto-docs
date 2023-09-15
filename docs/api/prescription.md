@@ -42,8 +42,8 @@ print(response.text)
             "id": 2714,
             "hospital": {
                 "id": 7,
-                "patron": "Prescrypto",
-                "location": "Avenida Paseo de la Reforma 369, Colonia Cuauhtémoc, Mexico City, CDMX, Mexico"
+                "patron": "Hospital de Prueba",
+                "location": "Nombre de la Calle, Colonia, CP, Alcaldia, Estado"
             },
             "clinic": null,
             "medic": "hola@prescrypto.com",
@@ -96,8 +96,8 @@ print(response.text)
             "id": 2713,
             "hospital": {
                 "id": 7,
-                "patron": "Prescrypto",
-                "location": "Avenida Paseo de la Reforma 369, Colonia Cuauhtémoc, Mexico City, CDMX, Mexico"
+                "patron": "Hospital de Prueba",
+                "location": "Nombre de la Calle, Colonia, CP, Alcaldia, Estado"
             },
             "clinic": null,
             "medic": "jason@prescrypto.com",
@@ -184,8 +184,8 @@ print(response.text)
             "id": 2714,
             "hospital": {
                 "id": 7,
-                "patron": "Prescrypto",
-                "location": "Avenida Paseo de la Reforma 369, Colonia Cuauhtémoc, Mexico City, CDMX, Mexico"
+                "patron": "Hospital de Prueba",
+                "location": "Nombre de la Calle, Colonia, CP, Alcaldia, Estado"
             },
             "clinic": null,
             "medic": "hola@prescrypto.com",
@@ -292,7 +292,7 @@ print(response.text)
     "id": 123,
     "hospital": 1,
     "clinic": null,
-    "medic": "Elizabeth@prescrypto.com",
+    "medic": "elizabeth@prescrypto.com",
     "patient": {
         "uid": "123123-12312-12312-123-123123123",
         "name": "George Constanza",
@@ -454,8 +454,8 @@ print(response.text)
     "id": 271,
     "hospital": {
         "id": 25,
-        "patron": "Prescrypto",
-        "location": "Avenida Paseo de la Reforma 369, Colonia Cuauhtémoc, Mexico City, CDMX, Mexico"
+        "patron": "Hospital de Prueba",
+        "location": "Nombre de la Calle, Colonia, CP, Alcaldia, Estado"
     },
     "clinic": null,
     "medic": "hola@prescrypto.com",

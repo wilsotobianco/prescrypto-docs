@@ -144,7 +144,7 @@ print(response.text)
     {
         "id": 343,
         "medic": {
-            "name": "Garfield the Cat",
+            "name": "Matilde Montoya",
             "email": "hola@prescrypto.com"
         },
         "hospital": 44,

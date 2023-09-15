@@ -68,14 +68,14 @@ print(response.text)
     "hospital": {
         "id": 162,
         "patron": "Consultorio Demo",
-        "location": "Paseo de la reforma 369, 06500, CDMX"
+        "location": "Nombre de la Calle, Colonia, CP, Alcaldia, Estado"
     },
     "clinic": null,
-    "medic": "jason@prescrypto.com",
+    "medic": "hola@prescrypto.com",
     "patient": {
-        "uid": "3ffda616-259b-44bf-a2f5-1333b21a6af0",
-        "name": "Jorge García",
-        "email": "jason@prescrypto.com",
+        "uid": "1234567890",
+        "name": "Pedro Sánchez",
+        "email": "pedro@email.com",
         "date_of_birth": "1973-03-01",
         "gender": "M"
     },
@@ -87,14 +87,14 @@ print(response.text)
             "instructions": "Tomar 1 pastilla cada  8 horas",
             "cost": 0.0,
             "bought": false,
-            "qty": 4,
+            "qty": 1,
             "bought_qty": 0,
-            "drug_upc": "c703973dce484643feadb053f617bfcf6ae4aa4cfa73e3a6ded4bbf109369270",
+            "drug_upc": "1234567890",
             "order_id": 0,
-            "category": "standard_drug",
+            "category": "",
             "ad_id": "",
-            "qty_label": "4",
-            "sku": "750131860890"
+            "qty_label": "",
+            "sku": "1234567890"
         },
         {
             "id": 2155,
@@ -102,26 +102,26 @@ print(response.text)
             "instructions": "Tomar 1 pastilla cada  8 horas",
             "cost": 0.0,
             "bought": false,
-            "qty": 3,
+            "qty": 1,
             "bought_qty": 0,
-            "drug_upc": "702de9b4e3fdd0b2af67cf1765ddcf8e48723146b07da8770a87a1c008ec5f4b",
+            "drug_upc": "1234567890",
             "order_id": 0,
-            "category": "standard_drug",
+            "category": "",
             "ad_id": "",
-            "qty_label": "3",
-            "sku": "7501318612655"
+            "qty_label": "",
+            "sku": "1234567890"
         }
     ],
     "extras": "",
-    "signature": "33c97b082e5bd0cf5b8e316a2bb2083138e391e9c7288de0672265917e7d05ee",
-    "created_at": "2021-07-28",
+    "signature": "1234567890",
+    "created_at": "2022-07-28",
     "sent": null,
     "send_rx": true,
     "show_diagnosis": false,
     "bought": false,
     "rejected": false,
-    "cta_link": "https://www.prescrypto.com/r/Td",
-    "transaction_url": "https://www.rexchain.io/hash/67faef326ddf281ed278f6501b21804a60d671cbfa0c8e28e6d879c0836cd12e"
+    "cta_link": "",
+    "transaction_url": "https://www.rexchain.io/hash/1234567890"
 }
 ```
 ```json title="[Error: 404] Rx not found"

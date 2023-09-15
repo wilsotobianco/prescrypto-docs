@@ -62,22 +62,22 @@ print(result.json())
         {
             "id": 1,
             "created_at": "2016-01-01T04:22:12Z",
-            "name": "Consultorio Daniel Hale Williams",
-            "patron": "Consultorio Daniel Hale Williams",
-            "location": "Paseo de la Reforma , Cuauhtémoc, 06500 Ciudad de México",
+            "name": "Consultorio de la Dra. Matilde Montoya",
+            "patron": "Consultorio de la Dra. Matilde Montoya",
+            "location": "Nombre de la Calle, Colonia, CP, Alcaldia, Estado",
             "contact": "hola@prescrypto.com",
-            "headline": "LLegando a tu corazon desde 1893",
+            "headline": "",
             "page_size": false,
             "page_template": "classic",
-            "picture": "https://www.prescrypto.com/media/Cardiologia.jpg",
-            "university_logo": "https://www.prescrypto.com/media/UNAM.jpg",
+            "picture": "https://www.prescrypto.com/media/logo.jpg",
+            "university_logo": "https://www.prescrypto.com/media/university.jpg",
             "is_active": true,
             "is_admin": true,
             "info": true,
             "send_emails": true,
             "zip_code": "06500",
-            "location_lat": "19.42755149734502",
-            "location_lon": "-99.16844323991225",
+            "location_lat": "00.0000000000000",
+            "location_lon": "00.0000000000000",
             "google_place_id": ""
         }
     ]    
@@ -112,22 +112,22 @@ print(result.json())
 {
     "id": 1,
     "created_at": "2016-01-01T04:22:12Z",
-    "name": "Consultorio Daniel Hale Williams",
-    "patron": "Consultorio Daniel Hale Williams",
-    "location": "Paseo de la Reforma , Cuauhtémoc, 06500 Ciudad de México",
+    "name": "Consultorio de la Dra. Matilde Montoya",
+    "patron": "Consultorio de la Dra. Matilde Montoya",
+    "location": "Nombre de la Calle, Colonia, CP, Alcaldia, Estado",
     "contact": "hola@prescrypto.com",
-    "headline": "LLegando a tu corazon desde 1893",
+    "headline": "",
     "page_size": false,
     "page_template": "classic",
-    "picture": "https://www.prescrypto.com/media/Cardiologia.jpg",
-    "university_logo": "https://www.prescrypto.com/media/UNAM.jpg",
+    "picture": "https://www.prescrypto.com/media/logo.jpg",
+    "university_logo": "https://www.prescrypto.com/media/university.jpg",
     "is_active": true,
     "is_admin": true,
     "info": true,
     "send_emails": true,
     "zip_code": "06500",
-    "location_lat": "19.42755149734502",
-    "location_lon": "-99.16844323991225",
+    "location_lat": "00.0000000000000",
+    "location_lon": "00.0000000000000",
     "google_place_id": ""
 }
 ```
@@ -157,9 +157,9 @@ import json
 url = "{{BASE_URL}}/api/v2/hospital/"
 
 payload = json.dumps({
-  "name": "Prescrypto ",
-  "patron": "Prescrypto S.A.P.I. de C.V.",
-  "location": "Paseo de la Reforma #369, Col. Cuauhtémoc, Alc. Cuauhtémoc ,C.P. 06500, Ciudad de México",
+  "name": "Hospital de Prueba",
+  "patron": "Hospital de Prueba S.A. de C.V.",
+  "location": "Nombre de la Calle, Colonia, CP, Alcaldia, Estado",
   "contact": "hola@prescrypto.com",
   "is_admin": True
 })
@@ -187,9 +187,9 @@ Add "is_admin: false" if you want to specify a Memberhip of "member" instead of 
 {
     "id": 1,
     "created_at": "2016-01-30T00:49:09.790586Z",
-    "name": "Prescrypto ",
-    "patron": "Prescrypto S.A.P.I. de C.V.",
-    "location": "Paseo de la Reforma #369, Col. Cuauhtémoc, Alc. Cuauhtémoc ,C.P. 06500, Ciudad de México",
+    "name": "Hospital Test",
+    "patron": "Hospital Test S.A. de C.V.",
+    "location": "Nombre de la Calle, Colonia, CP, Alcaldia, Estado",
     "contact": "hola@prescrypto.com",
     "headline": "",
     "page_size": false,
@@ -243,9 +243,9 @@ print(response.text)
 {
     "id": 1,
     "created_at": "2016-01-30T00:49:09.790586Z",
-    "name": "Prescrypto ",
-    "patron": "Prescrypto S.A.P.I. de C.V.",
-    "location": "Paseo de la Reforma #369, Col. Cuauhtémoc, Alc. Cuauhtémoc ,C.P. 06500, Ciudad de México",
+    "name": "Hospital Test",
+    "patron": "Hospital Test S.A. de C.V.",
+    "location": "Nombre de la Calle, Colonia, CP, Alcaldia, Estado",
     "contact": "nuevo_hola@prescrypto.com",
     "headline": "",
     "page_size": false,

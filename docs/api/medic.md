@@ -76,9 +76,9 @@ print(result.json())
 }
 ```
 
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
 
@@ -120,7 +120,7 @@ print(result.json())
 
 ```json title="[Error: 404] Medical not found or your token do not created the medic"
 {
-    "detail": "No encontrado."
+    "message": "Not found"
 }
 ```
 
@@ -209,7 +209,7 @@ If you want to add this Medic to an Hospital that you have created, you can add 
 
 ```json title="[Error: 400] You are not the admin of the Hospital id"
 {
-    "details": "No tiene permisos suficientes para asignar este hospital: 1"
+    "message": "You do not have sufficient permissions to assign this hospital: 1"
 }
 ```
 
@@ -282,7 +282,7 @@ print(response.text)
 
 ```json title="[Error: 404] Medical not found or your token do not created the medic"
 {
-    "detail": "No encontrado."
+    "message": "Not found"
 }
 ```
 

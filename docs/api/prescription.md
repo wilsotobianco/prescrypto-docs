@@ -149,9 +149,9 @@ print(response.text)
     ]
 }
 ```
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
 
@@ -239,12 +239,12 @@ print(response.text)
 ```
 ```json title="[Error: 404] Prescription not found"
 {
-    "detail": "No encontrado."
+    "message": "Not found"
 }
 ```
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
 
@@ -343,13 +343,13 @@ print(response.text)
 ```json title="[Error: 400] The required field field_name is missing"
 {
     "field_name": [
-        "Este campo es requerido."
+        "This field is required."
     ]
 }
 ```
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
 
@@ -379,18 +379,18 @@ print(response.text)
 #### Respose to Resend a Prescription
 ```json title="[StatusCode: 200] Success! "
 {
-    "detail": "Se ha re-enviado la receta, si persisten problemas de envio, verifique que su paciente haya aceptado recibir correo de parte de Prescrypto así como que no esté llegando a la bandeja de correos no deseados."
+    "message": "The prescription has been resent, if delivery problems persist, verify that your patient has accepted to receive mail from Prescrypto and that it is not arriving in the spam folder."
 }
 ```
 
 ```json title="[Error: 404] Rx not found"
 {
-    "detail": "Receta no encontrada con signature: 1234567890"
+    "message": "Rx not found with signature: 1234567890"
 }
 ```
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
 
@@ -423,9 +423,9 @@ print(response.text)
     "error": "rx not found"
 }
 ```
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
 
@@ -505,9 +505,9 @@ print(response.text)
     "reason_of_rejected": ""
 }
 ```
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
 

@@ -84,9 +84,9 @@ print(result.json())
 }
 ```
 
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
 
@@ -134,7 +134,7 @@ print(result.json())
 
 ```json title="[Error: 404] Hospital not found or your token do not created the Hospital"
 {
-    "detail": "No encontrado."
+    "message": "Not found"
 }
 ```
 
@@ -265,7 +265,7 @@ print(response.text)
 
 ```json title="[Error: 404] Hospital not found or your token do not created the Hospital"
 {
-    "detail": "No encontrado."
+    "message": "Not found"
 }
 ```
 

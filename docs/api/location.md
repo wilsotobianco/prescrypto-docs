@@ -61,9 +61,9 @@ print(response.text)
     }
 ]
 ```
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
 
@@ -94,18 +94,18 @@ print(response.text)
 #### Response to List all Locations
 ```json title="[StatusCode: 200]"
 {
-    "message": "HOSPITAL UPDATE SUCCESSFULLY"
+    "message": "Hopsital Update Successful"
 }
 ```
 
 ```json title="[Error: 404] Hospital not found"
 {
-    "message": "HOSPITAL NOT FOUND"
+    "message": "Hopsital not found"
 }
 ```
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
 

@@ -65,9 +65,9 @@ print(response.text)
     }
 ]
 ```
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
 
@@ -109,9 +109,9 @@ print(response.text)
     "uid": "b5555-5555-5555-5555-55555555"
 }
 ```
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
 
@@ -174,20 +174,20 @@ print(response.text)
     "state": "",
     "zip_code": "",
     "location": "",
-    "uid": "56e4fc3d-4038-4612-b610-5e533fc84f44"
+    "uid": "b5555-5555-5555-5555-55555555"
 }
 ```
 
 ```json title="[Error: 400] The required field date_of_birth is missing"
 {
     "field_name": [
-        "Este campo es requerido."
+        "This field is required."
     ]
 }
 ```
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
 
@@ -231,19 +231,19 @@ print(response.text)
     "state": "",
     "zip_code": "",
     "location": "",
-    "uid": "1231231-123123-12313-123-123123123"
+    "uid": "b5555-5555-5555-5555-55555555"
 }
 ```
 ```json title="[Error: 400] The required field field_name is missing"
 {
     "field_name": [
-        "Este campo es requerido."
+        "This field is required"
     ]
 }
 ```
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
 

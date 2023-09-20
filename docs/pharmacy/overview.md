@@ -129,9 +129,9 @@ print(response.text)
     "error": "rx not found"
 }
 ```
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
 
@@ -237,12 +237,12 @@ print(response.text)
 ```json title="[Error: 404] Rx not found"
 {
     "status": "400 Bad Response",
-    "error": "No encontrada la receta"
+    "error": "rx not found"
 }
 ```
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
 
@@ -275,9 +275,9 @@ print(response.text)
     "error": "rx not found"
 }
 ```
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
 [EOF]

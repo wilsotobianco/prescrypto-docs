@@ -62,9 +62,9 @@ print(response.text)
 }
 ```
 
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
 
@@ -104,7 +104,7 @@ print(response.text)
 
 ```json title="[Error: 404] Membership not found or your token do not created the membership"
 {
-    "detail": "No encontrado."
+    "message": "Not found"
 }
 ```
 
@@ -167,14 +167,14 @@ print(response.text)
     }
 ]
 ```
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
-```json title="[Error: 401] Token invalid to make the consult"
+```json title="[Error: 401] Invalid Token to make the consult"
 {
-    "message": "UNAUTHORIZED MEDIC"
+    "message": "Unauthorized Medic"
 }
 ```
  
@@ -222,17 +222,17 @@ print(response.text)
 ```
 ```json title="[Error: 409] Duplicate Membership"
 {
-    "details": "Membresía ya existe porfavor edite en lugar de intentar crearla de nuevo"
+    "message": "Membership already exists please edit instead of trying to create it again."
 }
 ```
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
-```json title="[Error: 401] Token invalid to make the consult"
+```json title="[Error: 401] Invalid Token to make the consult"
 {
-    "message": "UNAUTHORIZED MEDIC"
+    "message": "Unauthorized Medic"
 }
 ```
 
@@ -271,17 +271,17 @@ print(response.text)
 ```
 ```json title="[Error: 404] Membership not found"
 {
-    "detail": "No encontrado."
+    "message": "Not found"
 }
 ```
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
-```json title="[Error: 401] Token invalid to make the consult"
+```json title="[Error: 401] Invalid Token to make the consult"
 {
-    "message": "UNAUTHORIZED MEDIC"
+    "message": "Unauthorized Medic"
 }
 ```
 
@@ -327,17 +327,17 @@ print(response.text)
 ```
 ```json title="[Error: 404] Membership not found"
 {
-    "detail": "No encontrado."
+    "message": "Not found"
 }
 ```
-```json title="[Error: 401] Token invalid"
+```json title="[Error: 401] Invalid Token"
 {
-    "detail": "Token inválido."
+    "message": "Invalid Token"
 }
 ```
-```json title="[Error: 401] Token invalid to make the consult"
+```json title="[Error: 401] Invalid Token to make the consult"
 {
-    "message": "UNAUTHORIZED MEDIC"
+    "message": "Unauthorized Medic"
 }
 ```
 

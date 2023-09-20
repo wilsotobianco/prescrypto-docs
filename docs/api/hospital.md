@@ -119,8 +119,8 @@ print(result.json())
     "headline": "",
     "page_size": false,
     "page_template": "classic",
-    "picture": "https://www.prescrypto.com/media/logo.jpg",
-    "university_logo": "https://www.prescrypto.com/media/university.jpg",
+    "picture": "https://domain.com/logo.jpg",
+    "university_logo": "https://domain.com/university.jpg",
     "is_active": true,
     "is_admin": true,
     "info": true,
@@ -132,7 +132,7 @@ print(result.json())
 }
 ```
 
-```json title="[Error: 404] Hospital not found or your token do not created the Hospital"
+```json title="[Error: 404] Hospital not found or you don't have access to it."
 {
     "message": "Not found"
 }

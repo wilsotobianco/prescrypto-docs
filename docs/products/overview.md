@@ -46,13 +46,13 @@ curl -X GET \
         "package_detail_quantity": "0",
         "package_desc": "Neomixen Neomicina 10 Tabletas Caja",
         "description": "Neomicina 250 MG",
-        "molecule": "['neomicina']",
+        "molecule": "",
         "package_detail": "",
         "brand": "",
         "measure_units": "",
-        "image_url": "https://s3-us-west-2.amazonaws.com/drugs-catalog/all_drugs/7501125109706.png",
+        "image_url": "https://url/drug_name.png",
         "retail_price": "90.50",
-        "uid": "64d2d603e682c0b4d63f4c9a242852b66df33da05d9654000aef8dc56ded3403",
+        "uid": "1234567890",
         "order_id": 1
     },,
     ...

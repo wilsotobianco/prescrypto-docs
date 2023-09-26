@@ -10,77 +10,103 @@ The use of this endpoint it's focused on integrations where the Medic has access
 ## List all Locations
 It will list the Hospitals in which the Medic has a Membership.
 
+#### GET List all Locations
 ```python title="GET /api/v2/locations/"
 import requests
 
 url = "{{Base_URL}}api/v2/locations/"
 
-payload={}
 headers = {
   'Authorization': 'Token {{token}}'
 }
 
-response = requests.request("GET", url, headers=headers, data=payload)
+response = requests.request("GET", url, headers=headers)
 
 print(response.text)
 
 ```
 
-### Response
+#### Response to List all Locations
 ```json title="[StatusCode: 200]"
 [
     {
         "hospital": {
-            "name": "Clinica San Gregorio",
+            "name": "Hospital 1",
             "id": 23,
-            "location": "Clzd Tlalpan #123, col. Portales, CDMX"
+            "location": "Nombre de la Calle, Colonia, CP, Alcaldia, Estado"
         },
         "default": true,
         "clinics": [
             {
                 "id": null,
-                "name": "Clinica San Gregorio",
-                "location": "Clzd Tlalpan #123, col. Portales, CDMX"
+                "name": "Clínica 1 del Hospital 2",
+                "location": "Nombre de la Calle, Colonia, CP, Alcaldia, Estado"
             }
         ]
     },
     {
         "hospital": {
-            "name": "Hospitals Las Animas",
+            "name": "Hospital 2",
             "id": 35,
-            "location": "Ciudad de Mexico, 06500"
+            "location": "Nombre de la Calle, Colonia, CP, Alcaldia, Estado"
         },
         "default": false,
         "clinics": [
             {
                 "id": null,
-                "name": "Hospitals Las Animas",
-                "location": "Ciudad de Mexico, 06500"
+                "name": "Clínica 1 del Hospital 2",
+                "location": "Nombre de la Calle, Colonia, CP, Alcaldia, Estado"
             }
         ]
     }
 ]
+```
+```json title="[Error: 401] Invalid Token"
+{
+    "message": "Invalid Token"
+}
 ```
 
 ## Update Locations
 
 It will change the default "Active" Hospital for which the Medic will prescribe.
 
+#### PATCH Update Locations
 ```python title="PATCH /api/v2/locations/update/"
 import requests
 
 url = "{{Base_URL}}api/v2/locations/update/"
 
-payload={"hospital_id": 35}
+payload={
+  "hospital_id": 35
+}
+
 headers = {
   'Authorization': 'Token {{token}}',
   'Content-Type': 'application/json'
 }
 
-response = requests.request("GET", url, headers=headers, data=payload)
+response = requests.request("PATCH", url, headers=headers, data=payload)
 
 print(response.text)
 
+```
+#### Response to List all Locations
+```json title="[StatusCode: 200]"
+{
+    "message": "Hopsital Update Successful"
+}
+```
+
+```json title="[Error: 404] Hospital not found"
+{
+    "message": "Hopsital not found"
+}
+```
+```json title="[Error: 401] Invalid Token"
+{
+    "message": "Invalid Token"
+}
 ```
 
 [EOF]

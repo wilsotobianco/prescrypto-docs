@@ -44,24 +44,23 @@ Medications inner Fields
 ## Search an eRx
 The first element that you will have from an eRx, it's the "Signature" or "Sello electrónico", with this value you can search for it in Prescrypto and get a `json` with the relevant data of the eRx including the SKU of the medications.
 
+#### GET Search an eRx
 ```python title="GET /api/v2/pharmacy/rx/{{eRx_signature}}"
 import requests
-import json
 
-url = "{{Base_URL}}/api/v2/pharmacy/rx/eb2bd28dfac8f64207f7ad356d30a461741fc728ad55fe84c321ccd1e32634b3"
+url = "{{Base_URL}}/api/v2/pharmacy/rx/{{eRx_signature}}"
 
-payload = json.dumps({})
 headers = {
   'Authorization': 'Token {{Token}}',
   'Content-Type': 'application/json'
 }
 
-response = requests.request("GET", url, headers=headers, data=payload)
+response = requests.request("GET", url, headers=headers)
 
 print(response.text)
 
 ```
-### Response
+#### Response to Search an eRx
 
 ```json title="[200] Success, here is the detail of the eRx"
 {
@@ -69,14 +68,14 @@ print(response.text)
     "hospital": {
         "id": 162,
         "patron": "Consultorio Demo",
-        "location": "Paseo de la reforma 369, 06500, CDMX"
+        "location": "Nombre de la Calle, Colonia, CP, Alcaldia, Estado"
     },
     "clinic": null,
-    "medic": "jason@prescrypto.com",
+    "medic": "hola@prescrypto.com",
     "patient": {
-        "uid": "3ffda616-259b-44bf-a2f5-1333b21a6af0",
-        "name": "Jorge García",
-        "email": "jason@prescrypto.com",
+        "uid": "1234567890",
+        "name": "Pedro Sánchez",
+        "email": "pedro@email.com",
         "date_of_birth": "1973-03-01",
         "gender": "M"
     },
@@ -88,14 +87,14 @@ print(response.text)
             "instructions": "Tomar 1 pastilla cada  8 horas",
             "cost": 0.0,
             "bought": false,
-            "qty": 4,
+            "qty": 1,
             "bought_qty": 0,
-            "drug_upc": "c703973dce484643feadb053f617bfcf6ae4aa4cfa73e3a6ded4bbf109369270",
+            "drug_upc": "1234567890",
             "order_id": 0,
-            "category": "standard_drug",
+            "category": "",
             "ad_id": "",
-            "qty_label": "4",
-            "sku": "750131860890"
+            "qty_label": "",
+            "sku": "1234567890"
         },
         {
             "id": 2155,
@@ -103,26 +102,36 @@ print(response.text)
             "instructions": "Tomar 1 pastilla cada  8 horas",
             "cost": 0.0,
             "bought": false,
-            "qty": 3,
+            "qty": 1,
             "bought_qty": 0,
-            "drug_upc": "702de9b4e3fdd0b2af67cf1765ddcf8e48723146b07da8770a87a1c008ec5f4b",
+            "drug_upc": "1234567890",
             "order_id": 0,
-            "category": "standard_drug",
+            "category": "",
             "ad_id": "",
-            "qty_label": "3",
-            "sku": "7501318612655"
+            "qty_label": "",
+            "sku": "1234567890"
         }
     ],
     "extras": "",
-    "signature": "33c97b082e5bd0cf5b8e316a2bb2083138e391e9c7288de0672265917e7d05ee",
-    "created_at": "2021-07-28",
+    "signature": "1234567890",
+    "created_at": "2022-07-28",
     "sent": null,
     "send_rx": true,
     "show_diagnosis": false,
     "bought": false,
     "rejected": false,
-    "cta_link": "https://www.prescrypto.com/r/Td",
-    "transaction_url": "https://www.rexchain.io/hash/67faef326ddf281ed278f6501b21804a60d671cbfa0c8e28e6d879c0836cd12e"
+    "cta_link": "",
+    "transaction_url": "https://www.rexchain.io/hash/1234567890"
+}
+```
+```json title="[Error: 404] Rx not found"
+{
+    "error": "rx not found"
+}
+```
+```json title="[Error: 401] Invalid Token"
+{
+    "message": "Invalid Token"
 }
 ```
 
@@ -143,11 +152,12 @@ Medications inner Fields
 |id|`Int` the id of the medication, get this id from the Search endpoint|
 |bought_qty|`Int` the number of medication that will be sold, calculate the amount that you can sell based on the available qty (`qty`-`qty_bought`)|
 
+#### POST Burn Medication
 ```python title="POST api/v1/prescriptions/burn/{{eRx_Signature}}/"
 import requests
 import json
 
-url = "{{Base_URL}}api/v1/prescriptions/burn/5b08a4d000d9203e36394202d94be41a41ee7675c1731ff96a59705da36c3dd8"
+url = "{{Base_URL}}api/v1/prescriptions/burn/{{eRx_Signature}}"
 
 payload = json.dumps({
   "sales_code": "PHX12345",
@@ -169,7 +179,7 @@ print(response.text)
 
 ```
 
-### Responses
+#### Response to Burn Medication
 
 ```json title="here are some examples Status Codes that you can get"
 {"status": "202 OK"} // Everthing went fine 
@@ -188,7 +198,6 @@ A prescription can be rejected by a Medic or Pharmacy, once a prescription has b
 |`reason_of_rejected`|	`String` Description of the reason for the rejection|
 
 
-
 ```json title="JSON body example"
 {
     "rejected": true,
@@ -197,13 +206,12 @@ A prescription can be rejected by a Medic or Pharmacy, once a prescription has b
 }
 ```
 
-
-
+#### POST Reject
 ```python title="POST /api/v1/prescriptions/reject/{{eRx_Signature}}"
 import requests
 import json
 
-url = "{{Base_URL}}/api/v1/prescriptions/reject/eb2bd28dfac8f64207f7ad356d30a461741fc728ad55fe84c321ccd1e32634b3"
+url = "{{Base_URL}}/api/v1/prescriptions/reject/{{eRx_Signature}}"
 
 payload = json.dumps({
   "rejected": True,
@@ -220,25 +228,56 @@ print(response.text)
 
 ```
 
+#### Response to Reject
+```json title="[StatusCode: 200] Success! "
+{
+    "status": "202 OK"
+}
+```
+```json title="[Error: 404] Rx not found"
+{
+    "status": "400 Bad Response",
+    "error": "rx not found"
+}
+```
+```json title="[Error: 401] Invalid Token"
+{
+    "message": "Invalid Token"
+}
+```
 
 ## Download PDF (in base64)
 Prescriptions can be downloaded in their PDF representation with this endpoint, the response will be in base64, which will be needed to decode from base64 to PDF.
 
+#### GET Download PDF
 ```python title="GET /api/v2/rx/pdf/{{eRx_Signature}}/"
 import requests
-import json
 
-url = "{{Base_URL}}/api/v2/rx/pdf/eb2bd28dfac8f64207f7ad356d30a461741fc728ad55fe84c321ccd1e32634b3/"
+url = "{{Base_URL}}/api/v2/rx/pdf/{{eRx_Signature}}/"
 
-payload = json.dumps({})
 headers = {
   'Authorization': 'Token {{Token}}',
   'Content-Type': 'application/json'
 }
 
-response = requests.request("GET", url, headers=headers, data=payload)
+response = requests.request("GET", url, headers=headers)
 
 print(response.text)
 ```
-
+#### Respose to Download PDF
+```json title="[StatusCode: 200] Success! "
+{
+    "pdf": "pdf_in_base_64"
+}
+```
+```json title="[Error: 404] Rx not found"
+{
+    "error": "rx not found"
+}
+```
+```json title="[Error: 401] Invalid Token"
+{
+    "message": "Invalid Token"
+}
+```
 [EOF]

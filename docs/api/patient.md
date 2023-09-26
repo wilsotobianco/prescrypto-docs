@@ -14,24 +14,23 @@ The following parameters may be included as part of a URL query string.
 
 ## List All Patients
 
+#### GET All Patients
 ```python title="GET /api/v2/patient"
 import requests
 import json
 
 url = "{{Base_URL}}/api/v2/patient/"
 
-payload={}
 headers = {
-  'Authorization': 'Token {{Token}}',
-  'Content-Type': 'application/json'
+  'Authorization': 'Token {{Token}}'
 }
 
-response = requests.request("GET", url, headers=headers, data=payload)
+response = requests.request("GET", url, headers=headers)
 
 print(response.text)
 ```
 
-### Response
+#### Response to List All Patients
 ```json title="[StatusCode: 200] "
 [
     {
@@ -48,21 +47,73 @@ print(response.text)
         "zip_code": "",
         "location": "",
         "uid": "b5555-5555-5555-5555-55555555"
+    },
+    {
+        "id": 34,
+        "name": "Homero Peréz",
+        "email": "hola@prescrypto.com",
+        "date_of_birth": "1990-08-10",
+        "external_patient_file": "",
+        "gender": "H",
+        "curp": "",
+        "phone": "",
+        "address": "",
+        "state": "",
+        "zip_code": "",
+        "location": "",
+        "uid": "b4444-5555-5555-5555-55555555"
     }
 ]
+```
+```json title="[Error: 401] Invalid Token"
+{
+    "message": "Invalid Token"
+}
 ```
 
 ## List a Singular Patient
 
-You can also filter the information for a single patient, by adding the patient "id" or the "uid" to the endpoint route.
+You can also filter the information for a single patient, by adding the patient "uid" to the endpoint route.
 
-```python title="GET /api/v2/patient/{{Patient_ID}}"
-{{Base_URL}}/api/v2/patient/1/
-```
+#### GET List a Singular Patient
 ```python title="GET /api/v2/patient/{{Patient_uID}}"
-{{Base_URL}}/api/v2/patient/b5555-5555-5555-5555-55555555/
+import requests
+import json
+
+url = "{{Base_URL}}/api/v2/patient/{{Patient_uID}}"
+
+headers = {
+  'Authorization': 'Token {{Token}}'
+}
+
+response = requests.request("GET", url, headers=headers)
+
+print(response.text)
 ```
 
+#### Response to List All Patients
+```json title="[StatusCode: 200] "
+{
+    "id": 1,
+    "name": "George Constanza",
+    "email": "hola@prescrypto.com",
+    "date_of_birth": "1990-06-01",
+    "external_patient_file": "",
+    "gender": "M",
+    "curp": "",
+    "phone": "",
+    "address": "",
+    "state": "",
+    "zip_code": "",
+    "location": "",
+    "uid": "b5555-5555-5555-5555-55555555"
+}
+```
+```json title="[Error: 401] Invalid Token"
+{
+    "message": "Invalid Token"
+}
+```
 
 ## Create Patient
 You can create as many Patients as needed.
@@ -86,6 +137,7 @@ The request body should be a `application/json` encoded object, it may contain t
 |uid|`String`Unique id of the patient, asigned by Prescrypto|
 
 
+#### POST Create Patient
 ```python title="POST /api/v2/patient/"
 import requests
 import json
@@ -106,12 +158,12 @@ response = requests.request("POST", url, headers=headers, data=payload)
 print(response.text)
 ```
 
-### Response
+### Response to Create Patient
 
-```json title="[StatusCode: 201] The Patient has been created successfully"
+```json title="[StatusCode: 201] The patient has been created successfully"
 {
-    "id": 1,
-    "name": "George Constanza",
+    "id": 894,
+    "name": "Algun Nombre",
     "email": "",
     "date_of_birth": "1994-06-01",
     "external_patient_file": "",
@@ -122,25 +174,29 @@ print(response.text)
     "state": "",
     "zip_code": "",
     "location": "",
-    "uid": "1231231-123123-12313-123-123123123"
+    "uid": "b5555-5555-5555-5555-55555555"
 }
 ```
 
 ```json title="[Error: 400] The required field date_of_birth is missing"
 {
-    "date_of_birth": [
-        "Este campo es requerido."
+    "field_name": [
+        "This field is required."
     ]
 }
 ```
-
-
+```json title="[Error: 401] Invalid Token"
+{
+    "message": "Invalid Token"
+}
+```
 
 
 ## Update Patient
 You can update partial data of a Patient already created.
 
 
+## POST Update Patient
 ```python title="PATCH /api/v2/patient/{{patient_ID}}"
 import requests
 import json
@@ -160,8 +216,8 @@ response = requests.request("POST", url, headers=headers, data=payload)
 print(response.text)
 ```
 
-### Response
-```json title="[StatusCode: 202] The Medic has been updated successfully"
+#### Response to Update Patient
+```json title="[StatusCode: 202] The patient has been updated successfully"
 {
     "id": 1,
     "name": "Kosmo Kramer",
@@ -175,7 +231,19 @@ print(response.text)
     "state": "",
     "zip_code": "",
     "location": "",
-    "uid": "1231231-123123-12313-123-123123123"
+    "uid": "b5555-5555-5555-5555-55555555"
+}
+```
+```json title="[Error: 400] The required field field_name is missing"
+{
+    "field_name": [
+        "This field is required"
+    ]
+}
+```
+```json title="[Error: 401] Invalid Token"
+{
+    "message": "Invalid Token"
 }
 ```
 

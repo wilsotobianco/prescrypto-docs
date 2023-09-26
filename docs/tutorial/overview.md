@@ -181,7 +181,7 @@ Response
 [
     {
         "id": 180,
-        "name": "Jesus Alvarado",
+        "name": "Juan Alvarado",
         "email": "testPatient@email.com",
         "date_of_birth": "1990-01-18",
         "external_patient_file": "",

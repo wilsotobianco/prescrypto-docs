@@ -74,7 +74,7 @@ module.exports = {
               to: '/docs/changelog/overview',
             },
             {
-              label: 'Error codes',
+              label: 'API Error Codes',
               to: '/docs/error_codes/overview',
             },
           ],

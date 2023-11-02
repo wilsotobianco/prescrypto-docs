@@ -75,7 +75,7 @@ module.exports = {
             },
             {
               label: 'API Error Codes',
-              to: '/docs/error_codes/overview',
+              to: '/docs/errorCodes/overview',
             },
           ],
         },

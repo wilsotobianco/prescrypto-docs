@@ -28,7 +28,7 @@ https://www.prescrypto.com/new/api_token/?
 Params:
 v2_redirect=true
 &token=< TOKEN>
-?external_patient_file=< EXTERNAL-ID>
+&external_patient_file=< EXTERNAL-ID>
 &patient_email=< EMAIL>
 &patient_name=< NAME>
 &patient_dob=< AGE(INT)>

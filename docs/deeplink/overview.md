@@ -22,14 +22,17 @@ The params specifications are below
 There is an example below with deeplink for autologin and autofill prescription:
 
 ```shell
-https://app.prescrypto.com/redirect/new/
+Base: 
+https://www.prescrypto.com/new/api_token/?
+
+Params:
+v2_redirect=true
+&token=< TOKEN>
 ?external_patient_file=< EXTERNAL-ID>
 &patient_email=< EMAIL>
 &patient_name=< NAME>
 &patient_dob=< AGE(INT)>
-&token=< TOKEN>
 &diagnosis=< DIAGNOSIS>
-&v2_redirect=true
 &hospital=< Hospital_ID(INT)>
 ```
 **IMPORTANT NOTE: All the param values have to be URI ENCODED, otherwise, the link could not work as expected**

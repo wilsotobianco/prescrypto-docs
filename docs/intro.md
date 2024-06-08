@@ -29,7 +29,7 @@ Additionally, it is recommended adding the category "unstructured_drug"
 ```jsx
 // Example for a free medication
 {
-  "presentation": "Algún Medicamento Libre", // Observe that "presentatio" field must be filled
+  "presentation": "Algún Medicamento Libre", // Observe that "presentation" field must be filled
   "instructions": "Instrucciones para un medicamento libre",
   "category": "unstructured_drug"
 }
